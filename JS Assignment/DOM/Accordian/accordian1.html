@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 80%;
+            margin: auto;
+            font-size: 20px;
+        }
+        p{
+            display: none;
+            color: blue ;
+        }
+        h1{
+            cursor: pointer;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <h1 onclick="abc(event)">HTML</h1>
+    <p>"Hypertext" refers to links that connect web pages to one another,
+         either within a single website or between websites. Links are a fundamental aspect of the Web.
+          By uploading content to the Internet and linking it to pages created by other people, 
+          you become an active participant in the World Wide Web.
+          "Hypertext" refers to links that connect web pages to one another,
+          either within a single website or between websites. Links are a fundamental aspect of the Web.
+           By uploading content to the Internet and linking it to pages created by other people, 
+           you become an active participant in the World Wide Web.
+           "Hypertext" refers to links that connect web pages to one another,
+           either within a single website or between websites. Links are a fundamental aspect of the Web.
+            By uploading content to the Internet and linking it to pages created by other people, 
+            you become an active participant in the World Wide Web.</p>
+    <h1 onclick="abc(event)">CSS</h1>
+
+    <p>What is CSS? Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g., fonts, colors, spacing) to Web documents. 
+        These pages contain information on how to learn and use CSS and on available software.
+         They also contain news from the CSS working group.What is CSS? Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g., fonts, colors, spacing) to Web documents. 
+         These pages contain information on how to learn and use CSS and on available software.
+             They also contain news from the CSS working groupWhat is CSS? Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g., fonts, colors, spacing) to Web documents. 
+             These pages contain information on how to learn and use CSS and on available software.
+              They also contain news from the CSS working group</p>
+
+
+    <h1 onclick="abc(event)">Javascript</h1>
+
+    <p>JavaScript is a scripting language that enables you to create dynamically updating content, 
+        control multimedia, animate images, and pretty much everything else.JavaScript is a scripting language that enables you to create dynamically updating content, 
+        control multimedia, animate images, and pretty much everything else.JavaScript is a scripting language that enables you to create dynamically updating content, 
+        control multimedia, animate images, and pretty much everything else.JavaScript is a scripting language that enables you to create dynamically updating content, 
+        control multimedia, animate images, and pretty much everything else.JavaScript is a scripting language that enables you to create dynamically updating content, 
+        control multimedia, animate images, and pretty much everything else.JavaScript is a scripting language that enables you to create dynamically updating content, 
+        control multimedia, animate images, and pretty much everything else.JavaScript is a scripting language that enables you to create dynamically updating content, 
+       JavaScript is a scripting language that enables you to create dynamically updating content, 
+        control multimedia, animate images, and pretty much everything else.</p>
+
+                
+</body>
+<script>
+    function abc(e){
+        
+        
+        if( e.target.nextElementSibling.style.display==='block'){
+        e.target.nextElementSibling.style.display='none'
+      
+    }
+    else{
+        document.querySelectorAll('p').forEach(function(el){
+            el.style.display='none'
+        })
+        
+        e.target.nextElementSibling.style.display='block'
+    }}
+
+    
+</script>
+</html>

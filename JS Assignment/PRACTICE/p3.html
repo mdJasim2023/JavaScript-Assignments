@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="forM" onsubmit="event.preventDefault">
+        <label>Name :</label>
+        <input type="text" name="fname">
+        <br><br>
+        <label>Number :</label>
+        <input type="number" name="number">
+        <br><br>
+        <label>E-mail :</label>
+        <input type="email" name="E-mail">
+        <br><br>
+        <label>Image :</label>
+        <input type="file" name="image">
+        <br><br>
+        <button onclick="abc()">Add Cart</button>
+    </form>
+
+    <script>
+        function abc(a){
+             var obj = {
+                'Name':'jasiM',
+                'Number':'',
+                'Email':'',
+                'Image':''
+             }
+             var ar = [];
+             obj.Name = forM.fname.value;
+             obj.Number = forM.number.value;
+             obj.Email = forM.E-mail.value;
+             obj.Image = forM.image.value;
+            }
+var x = 111;
+            function xyz(){
+                var x = 10;
+            }
+            console.log(x);
+            
+    </script>
+</body>
+</html>

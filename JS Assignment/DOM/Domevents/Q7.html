@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <ol id="ol"></ol>
+
+  <script>
+     var students = [		
+                                    {
+                                        "firstname": "praveen",
+                                        "age": 36,
+                                        "subjects":['angular','nodejs','reactjs','java']
+                                    }, 
+                                    {
+                                        "firstname": "srikanth",
+                                        "age": 32,
+                                        "subjects":['react','mongodb']
+                                    }, 
+                                    {
+                                        "firstname": "pradeep",
+                                        "age": 21,
+                                        "subjects":['express','mongoose','python']
+                                    }
+                            ]
+                                
+
+                                students.forEach(function(a){
+                                    var ol = document.getElementById('ol')
+                                    var li = document.createElement('li')
+                                    li.innerHTML=a.firstname
+                                    ol.appendChild(li)
+                                    var nesol=document.createElement('ol')
+                                    var l1 = document.createElement('li')
+                                    var l2 = document.createElement('li')
+                                    l1.innerHTML=a.subjects[0]
+                                    li.appendChild(nesol)
+                                    nesol.appendChild(l1)
+                                    ol.appendChild(li)
+                                })
+                                
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2px" align="center" style="border-collapse: collapse; border-color: blue;" cellpadding="15px" id="a" align="center">
+        <!-- <tr id="a"></tr> -->
+    </table>
+    <script>
+        var headings = ['Name','Age','Gender','City','salary'];
+
+        var people = [
+                            {
+                            'name':'Pranay',
+                            "age": 36,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 10000
+                            },
+                            {
+                            'name':'Sanjeeth',
+                            "age": 32,
+                            "gender": "male",
+                            "city": "bengaluru",
+                            "salary": 20000
+                            },
+                            {
+                            'name':'Jasim',
+                            "age": 21,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 25000
+                            },
+                            {
+                            'name':'Angel',
+                            "age": 20,
+                            "gender": "female",
+                            "city": "nalgonda",
+                            "salary": 30000
+                            },
+                            {
+                            'name':'Ram Naidu',
+                            "age": 22,
+                            "gender": "male",
+                            "city": "guntur",
+                            "salary": 2000
+                            },
+                            {
+                            'name':'Ashish',
+                            "age": 14,
+                            "gender": "male",
+                            "city": "indore",
+                            "salary": 40000
+                            }
+                            ];
+
+
+        var rt = document.createElement('tr')
+        var thr = document.getElementById('a')
+        thr.appendChild(rt)
+        headings.forEach(function(aa){
+            var ht=document.createElement('th')
+            ht.innerHTML=aa;
+            rt.appendChild(ht)
+            ht.style.width='100px'
+        })
+
+        people.forEach(function(x){
+            var trow = document.createElement('tr')  //<tr></tr>
+            var td1=document.createElement('td')
+            td1.innerHTML=x.name
+            td1.style.textAlign='center'
+            trow.appendChild(td1);
+            var td2=document.createElement('td')
+            td2.innerHTML=x.age
+            td2.style.textAlign='center'
+            trow.appendChild(td2);
+            var td3=document.createElement('td')
+            td3.innerHTML=x.gender
+            td3.style.textAlign='center'
+            trow.appendChild(td3);
+            var td4=document.createElement('td')
+            td4.innerHTML=x.city
+            td4.style.textAlign='center'
+            trow.appendChild(td4);
+            var td5=document.createElement('td')
+            td5.innerHTML=x.salary
+            td5.style.textAlign='center'
+            trow.appendChild(td5);
+            thr.appendChild(trow)
+        })
+        
+       
+
+        
+    </script>
+</body>
+</html>

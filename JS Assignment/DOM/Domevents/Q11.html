@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table id="tab"></table>
+    <script>
+        //Display only the male people who are above the age of 25.
+
+        
+        var headings =['FirstName','LastName','Age','Gender','City','Salary']
+                           var people = [
+                        {
+                        "firstname": "praveen",
+                        "lastname": "gubbala",
+                        "age": 36,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 10000
+                        },
+                        {
+                        "firstname": "srikanth",
+                        "lastname": "gubbala",
+                        "age": 32,
+                        "gender": "male",
+                        "city": "bengaluru",
+                        "salary": 20000
+                        },
+                        {
+                        "firstname": "pradeep",
+                        "lastname": "reddy",
+                        "age": 21,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 25000
+                        },
+                        {
+                        "firstname": "mounika",
+                        "lastname": "mudiraj",
+                        "age": 20,
+                        "gender": "female",
+                        "city": "nalgonda",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "nikhil",
+                        "lastname": "m",
+                        "age": 22,
+                        "gender": "male",
+                        "city": "guntur",
+                        "salary": 2000
+                        },
+                        {
+                        "firstname": "riya",
+                        "lastname": "bhadouria",
+                        "age": 14,
+                        "gender": "female",
+                        "city": "indore",
+                        "salary": 40000
+                        }
+                        ];
+
+                        var tref = document.getElementById('tab')
+                        var tr=document.createElement('tr')
+                        
+                        tref.appendChild(tr)
+                        tref.setAttribute('border',2)
+                        tref.setAttribute('align','center')
+
+                        headings.forEach(function(a){
+                            var th = document.createElement('th')
+                            th.setAttribute('width',100)
+                            th.innerHTML=a;
+                            th.style.padding='20px'
+                            tr.appendChild(th)
+                        })
+
+                        
+
+                        people.forEach(function(a){
+                            var trow = document.createElement('tr')
+
+                        for(var x in a){
+                            if(a.age>25){
+                                var td1 = document.createElement('td')
+                                td1.innerHTML=a[x]
+                                td1.style.textAlign='center'
+                                td1.style.padding='20px'
+                                trow.appendChild(td1)
+                            }
+                            tref.appendChild(trow)
+                        }
+                        })
+    </script>
+</body>
+</html>

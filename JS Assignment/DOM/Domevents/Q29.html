@@ -1,0 +1,189 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*#aa{
+height: 800px;
+width: 600px;
+border: 2px solid red;
+        }/*/
+    </style>
+</head>
+<body>
+    <form id="fm" onsubmit="event.preventDefault()" name="form"></form>
+    <div id="aa"></div>
+   
+   <script>
+ var ar=[]
+
+    var fme=document.getElementById("fm")
+    var nme=document.createElement("input")
+    nme.setAttribute("type","text")
+    
+    var lb1=document.createElement("label")
+    lb1.innerHTML="Name :"
+    var b1=document.createElement("br")
+    fme.append(lb1)
+    fme.append(nme)
+    fme.append(b1)
+    
+    var num=document.createElement("input")
+    num.setAttribute("type","text")
+    var lb2=document.createElement("label")
+    lb2.innerHTML="Number:"
+    var b2=document.createElement("br")
+    fme.append(lb2)
+    fme.append(num)
+    fme.append(b2)
+
+    var jas=document.createElement("input")
+    jas.setAttribute("type","mail")
+    var lb4=document.createElement("label")
+    lb4.innerHTML="mail:"
+    var b2=document.createElement("br")
+    fme.append(lb4)
+    fme.append(jas)
+    fme.append(b2)
+
+   
+    
+  
+
+    var fil=document.createElement("input")
+    fil.setAttribute("type","file")
+    var lb4=document.createElement("label")
+    lb4.innerHTML="upload file :"
+    var b4=document.createElement("br")
+    fme.append(lb4)
+    fme.append(fil)
+    fme.append(b4)
+
+    var btn=document.createElement("button")
+   btn.innerHTML="submit"
+   btn.onclick=function(){
+   
+   var kr={
+    "name":nme.value,
+    "number":num.value,
+    "mail":jas.value
+   }
+   ar.push(kr)
+   nme.value="";
+   num.value="";
+   jas.value="";
+   console.log(ar)
+   cre_tab()
+   }
+
+   var hh4=document.createElement("button")
+  hh4.innerHTML="sort"
+ 
+  fme.append(hh4)
+   hh4.onclick= function(){
+    ar.sort(function(a,b){
+    if(a.name>b.name){
+        return 1
+    } 
+    else if(a.name<b.name){
+        return -1
+    }
+    return 0;
+   
+})
+
+
+cre_tab(ar)
+
+}
+// var hh5=document.createElement("button")
+//   hh5.innerHTML="ascnd"
+ 
+//   fme.append(hh5)
+//    hh5.onclick= function()A{
+//     ar.sort(function(a,b){
+//     if(a.name<b.name){
+//         return 1
+//     } 
+//     else if(a.name>b.name){
+//         return -1
+//     }
+//     return 0;
+   
+// })
+
+
+// cre_tab(ar)
+
+// }
+var el=document.getElementById("aa");
+
+   var su=document.getElementById("aa")
+   
+  
+  function cre_tab(){
+
+    el.innerHTML="";
+  ar.forEach(function(f){
+  var div1=document.createElement("div")
+   div1.style.height="200px"
+   div1.style.width="200px"
+   div1.style.border="2px solid green"
+   div1.style.backgroundColor="gold"
+   su.append(div1)
+
+   
+   var hh1=document.createElement("div")
+   var hh2=document.createElement("div")
+   var hh3=document.createElement("div")
+    hh1.innerHTML= "Name:"+f.name;
+    hh1.style.padding="20px"
+    hh1.style.fontFamily="bold"
+   hh2.innerHTML="Number:"+f.number;
+   hh2.style.padding="20px"
+   hh3.innerHTML="mail:"+f.mail
+   hh3.style.padding="20px"
+   div1.append(hh1)
+   div1.append(hh2)
+   div1.append(hh3)
+   fme.reset()
+  })
+   }
+
+    fme.append(btn)
+   
+  //  console.log(document.getElementById("fm"))
+  //  console.log(document.getElementById("aa"))
+
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body align="center">
+    <img src='' alt="" onmouseover="change()" id="img">
+    <script>
+        var arr=['https://img.uhdpaper.com/wallpaper/anime-boy-hoodie-digital-art-196@1@n-thumb.jpg','https://img.uhdpaper.com/wallpaper/anime-girl-cgi-digital-art-861@0@i-thumb.jpg','https://img.uhdpaper.com/wallpaper/cyberpunk-anime-girl-rifle-272@1@m-thumb.jpg','https://img.uhdpaper.com/wallpaper/shishio-makoto-rurouni-kenshin-anime-110@1@l-thumb.jpg',"https://img.uhdpaper.com/wallpaper/anime-girl-katana-hoodie-161@1@n-thumb.jpg"]
+        let i=0;
+        let img=document.getElementById("img")
+        img.src=arr[i]
+        function change(){
+            img.src=arr[i++]
+            if(i===arr.length){
+                i=0;
+            }
+        }
+    </script>
+</body>
+
+</html>

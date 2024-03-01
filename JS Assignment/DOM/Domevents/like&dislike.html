@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1 style="color: red;">Like & Dislike Buttons</h1>
+    <button onclick="abc()">Like</button> 
+    <span id="s1">0</span>
+    <br><br>
+    <button onclick="xyz()">Dislike</button>
+     <span id="s2">0</span>
+    </center>
+    <script>
+        var c =0;
+        var s1 = document.getElementById('s1')
+        function abc(){
+            c++;
+            s1.innerHTML=c
+        }
+        var a = 0;
+        var s2 = document.getElementById('s2')
+        function xyz(){
+            a++;
+            s2.innerHTML=a
+        }
+    </script>
+</body>
+</html>

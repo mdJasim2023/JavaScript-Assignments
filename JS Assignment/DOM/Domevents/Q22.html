@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 30%;
+            height: 150px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="d4">I'm Nothing</h1>
+    </div>
+    <br><br>
+    <button onclick="chnge()">True/False</button>
+
+    <script>
+        function chnge(){
+            var m = document.getElementById('d4')
+            
+            if(m.innerHTML==='False'){
+                m.innerHTML='True'
+            }
+            else{
+                m.innerHTML='False'
+            }
+        }
+    </script>
+</body>
+</html>

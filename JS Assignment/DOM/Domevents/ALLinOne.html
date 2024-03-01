@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 30%;
+            height: 200px;
+            border: 1px solid;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="xyz()">Click me</button>
+    <h1 id="d1"></h1>
+    <div id="d2"></div>
+    <br>
+    <button onclick="abc('red')">Red</button>
+    <button onclick="abc('green')">Green</button>
+    <button onclick="abc('blue')">Blue</button>
+    <button onclick="abc('pink')">pink</button><br><br>
+    <button onclick="ab(event)">White</button><br><br>
+    <div onmouseover="changeColor(event)"></div>
+
+    <center>
+        <button onclick="xy()">Toogle</button>
+        <span id="d3"></span><br><br>
+    <button onclick="bc(event)">ON</button>
+</center>
+    <script>
+        function xyz(){
+            var h1 = document.getElementById('d1')
+            h1.innerHTML='Welcome to my World'
+        }
+        function abc(y){
+                var x = document.getElementById('d2');
+                x.style.backgroundColor=y
+         }
+
+         function ab(e){
+            if(e.target.style.backgroundColor==='green'){
+                e.target.style.backgroundColor='white'
+                e.target.innerHTML='White'
+                e.target.style.color='black'
+            }
+            else{
+                e.target.style.backgroundColor='green'
+                e.target.innerHTML='green'
+                e.target.style.color='white'
+            }
+        }
+
+        var a = ['green','white','orange','red','blue','grey','darkblue','pink','yellow','voilet','black']
+        var i=0;
+        function changeColor(e){
+            e.target.style.backgroundColor=a[i]
+            i++;
+            if(i===a.length){
+                i=0
+            }
+        }
+
+        function xy(){
+        var z = document.getElementById('d3')
+        if(z.innerHTML==='True'){
+            z.innerHTML='False'
+            z.style.color='red'
+        }
+        else{
+            z.innerHTML='True'
+            z.style.color='red'
+        }
+        }
+
+        function bc(e){
+            if(e.target.innerHTML==='ON'){
+               e.target.innerHTML='OFF'
+            }
+            else{
+                e.target.innerHTML='ON'
+            }
+        }
+
+    </script>
+</body>
+</html>

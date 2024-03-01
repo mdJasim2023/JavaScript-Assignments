@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Find all prime numbers between the given interval using functions.
+
+        // Function to check if a number is prime
+// function isPrimeNumber(number) {
+//   if (number < 2) {
+//     return false;
+//   }
+
+//   for (let i = 2; i <= Math.sqrt(number); i++) {
+//     if (number % i === 0) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// Function to find prime numbers in an interval
+// function findPrimesInInterval(start, end) {
+//   const primes = [];
+
+//   for (let num = start; num <= end; num++) {
+//     let isPrime = true;
+
+//     // Check if the current number is prime
+//     for (let i = 2; i <= Math.sqrt(num); i++) {
+//       if (num % i === 0) {
+//         isPrime = false;
+//         break;
+//       }
+//     }
+//     if (isPrime) {
+//       primes.push(num)
+//     }
+//   }
+//   return primes ;
+// }
+// const primeNumbers = findPrimesInInterval(10, 50);
+// console.log(primeNumbers);
+
+
+function prime(a,b){
+    for(var i=a;i<=b;i++){
+        var c = 0;
+
+        for(var j=1;j<=i;j++){
+            if(i%j===0){
+                c++
+            }
+        }
+        if(c===2){
+            console.log(i);
+        }
+    }
+}
+var x = prime(1,50);
+
+
+
+            function arm(a){
+                for(var i =a;i>)
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            
+        }
+    </style>
+</head>
+<body>
+    <table id="a" align="center" cellpadding="20px"></table>
+
+    <script>
+        //Display all the people's data in a table.
+        var headings =['FirstName','LastName','Age','Gender','City','Salary']
+               var people = [
+                        {
+                        "firstname": "praveen",
+                        "lastname": "gubbala",
+                        "age": 36,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 10000
+                        },
+                        {
+                        "firstname": "srikanth",
+                        "lastname": "gubbala",
+                        "age": 32,
+                        "gender": "male",
+                        "city": "bengaluru",
+                        "salary": 20000
+                        },
+                        {
+                        "firstname": "pradeep",
+                        "lastname": "reddy",
+                        "age": 21,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 25000
+                        },
+                        {
+                        "firstname": "mounika",
+                        "lastname": "mudiraj",
+                        "age": 20,
+                        "gender": "female",
+                        "city": "nalgonda",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "nikhil",
+                        "lastname": "m",
+                        "age": 22,
+                        "gender": "male",
+                        "city": "guntur",
+                        "salary": 2000
+                        },
+                        {
+                        "firstname": "riya",
+                        "lastname": "bhadouria",
+                        "age": 14,
+                        "gender": "female",
+                        "city": "indore",
+                        "salary": 40000
+                        }
+                        ];
+
+                        var tr = document.createElement('tr')
+                            var tref=document.getElementById('a')
+                            tref.setAttribute('border',2)
+                            tref.appendChild(tr)
+                            headings.forEach(function(a){
+                                var td=document.createElement('th')
+                                td.innerHTML=a;
+                                td.style.textAlign='center'
+                                td.style.width='100px'
+                                tr.appendChild(td)
+                            })
+
+                            people.forEach(function(a){
+                                var tr = document.createElement('tr');
+
+                                for(var x in a){
+                                    var td=document.createElement('td')
+                                    td.innerHTML=a[x]
+                                    td.style.textAlign='center'
+                                    tr.appendChild(td)
+                                }
+                                tref.appendChild(tr)
+                            })
+                        
+                            
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main_Div{
+            width: 400px;
+            height: 400px;
+            border: 1px solid;
+            margin: 20px auto;
+            text-align: center;
+        }
+        ul{
+            text-align: justify;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <table id="d1"></table>
+    <!-- <h1>TO DO LIST</h1>
+    <input type="text" id="inp">
+    <button onclick="generateLi()">ADD</button><br><br>
+    <input type="radio" id="i1" name="s" checked value="All" onclick="filterfn(event)"><b>All</b>
+    <input type="radio"  id="i2" name="s" value="Completed" onclick="filterfn(event)"><b>Completed </b>
+    <input type="radio"  id="i3" name="s" value="Not Completed" onclick="filterfn(event)"><b>Not Completed </b>
+    <ul id="ul"></ul> -->
+    </div>
+    <script>
+        //  var ar =[];
+        //  var fil = [];
+        // var iref = document.getElementById('inp')
+        // var uref = document.getElementById('ul')
+        // function generateLi(){
+        //      var obj = {
+        //         task : iref.value,
+        //         status:'Not Completed'
+        //      } 
+        //      ar.push(obj)
+        //      iref.value='';
+        //      console.log(ar);
+        //      createobj(ar)
+        // }
+        // function createobj(ar1){
+        //     uref.innerHTML=''
+        //     ar1.forEach((a,b)=>{
+        //     var li = document.createElement('li')
+        //     var btn =document.createElement('button')
+        //     btn.innerHTML='Done'
+        //     btn.onclick=()=>{
+        //         a.status='Completed'
+        //         btn.style.display='none'
+        //         li.style.textDecoration='line-through'
+        //         var ubtn = document.createElement('button')
+        //         var dbtn = document.createElement('button')
+        //         ubtn.innerHTML='Undo'
+        //         dbtn.innerHTML='Delete'
+        //         li.appendChild(ubtn)
+        //         li.appendChild(dbtn)
+        //         ubtn.onclick=()=>{
+        //             if(li.style.textDecoration==='none'){
+        //             li.style.textDecoration='line-through'
+        //         }
+        //         else{
+        //             li.style.textDecoration='none'
+        //         }
+        //         }
+        //         dbtn.onclick=()=>{
+        //             ar1.splice(b,1)
+        //             console.log(ar1);
+        //             createobj(ar1)
+        //         }
+        //     }
+        //     li.innerHTML=a.task;
+        //     li.style.padding='5px';
+        //     uref.appendChild(li);
+        //     li.appendChild(btn);
+        // })
+        // }
+        // function filterfn(e){
+        //     fil=ar.filter((a,b)=>{
+        //         return a.status===e.target.value
+        //     })
+        //     createobj(fil)
+        // }
+
+        var ar = [
+            {
+                name:'jasiM',
+                age:21,
+                gender:'male'
+            },
+            {
+                name:'Angel',
+                age:21,
+                gender:'Female'
+            },
+            {
+                name:'jasiM',
+                age:21,
+                gender:'male'
+            },
+            {
+                name:'Angel',
+                age:21,
+                gender:'Female'
+            },
+            {
+                name:'jasiM',
+                age:21,
+                gender:'male'
+            },
+            {
+                name:'Angel',
+                age:21,
+                gender:'Female'
+            },
+            {
+                name:'jasiM',
+                age:21,
+                gender:'male'
+            },
+            {
+                name:'Angel',
+                age:21,
+                gender:'Female'
+            },
+            {
+                name:'jasiM',
+                age:21,
+                gender:'male'
+            },
+            {
+                name:'Angel',
+                age:21,
+                gender:'Female'
+            }
+        ]
+
+        var headings = ['Name','Age','Gender']
+        
+        var d1 = document.getElementById('d1')
+        var tr = document.createElement('tr')
+        headings.forEach(function(a){
+            var th = document.createElement('th')
+            th.innerHTML=a; 
+            tr.appendChild(th)
+        })
+            d1.appendChild(tr)
+
+        ar.forEach((a)=>{
+            var tr1 = document.createElement('tr')
+            var td1 = document.createElement('td')
+            td1.innerHTML=a.name
+            var td2=document.createElement('td')
+            td2.innerHTML=a.age
+            var td3=document.createElement('td')
+            td3.innerHTML=a.gender
+
+            tr1.appendChild(td1)
+            tr1.appendChild(td2)
+            tr1.appendChild(td3)
+        })
+        d1.appendChild(tr1)
+        
+
+
+    </script>
+</body>
+</html>

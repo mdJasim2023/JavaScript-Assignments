@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="xyz()">Click me</button>
+    <h1 id="d1"></h1>
+
+    <script>
+        function xyz(){
+            var h1 = document.getElementById('d1')
+            if(h1.innerHTML==='Welcome to my World'){
+                h1.innerHTML=''
+            }
+            else{
+                h1.innerHTML='Welcome to my World'
+                h1.style.color='red'
+            }
+        }
+
+    </script>
+</body>
+</html>

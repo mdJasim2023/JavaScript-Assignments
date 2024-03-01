@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1"></div>
+    <h1>Total: <span id="d3"></span></h1>
+
+    <script>
+        var obj = [
+            {
+                'rate':4000,
+                'count':1
+            },
+            {
+                'rate':2000,
+                'count':1
+            },
+            {
+                'rate':3000,
+                'count':1
+            },
+        ]
+
+        function createCart(ar){
+        var div = document.getElementById('d1');
+        div.innerHTML=''
+        ar.forEach(function(a,b){
+            var span = document.createElement('span')
+            span.innerHTML=a['rate'];
+            div.appendChild(span)
+        
+
+        var btn1 = document.createElement('button')
+        btn1.innerHTML='+'
+        btn1.onclick=function(){
+            ar[b].count++;
+            createCart(obj)
+        }
+        div.appendChild(btn1)
+
+        var inp = document.createElement('input')
+        inp.value=a['count']
+        inp.style.textAlign='center'
+        div.appendChild(inp)
+
+        var btn2 = document.createElement('button')
+        btn2.innerHTML='-'
+        btn2.onclick=function(){
+            ar[b].count--;
+            createCart(obj)
+        }
+        div.appendChild(btn2)
+        
+        var br = document.createElement('br')
+        div.appendChild(br)
+    })}
+
+    createCart(obj)
+    </script>
+</body>
+</html>

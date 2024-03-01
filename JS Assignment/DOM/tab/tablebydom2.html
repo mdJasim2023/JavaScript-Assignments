@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id ='a' border="2px" align="center" style="border-collapse: collapse; " cellpadding="20px" ></table>
+    <script>
+        var headings =['Name','Age','Gender','City','Salary']
+        var people = [
+                            {
+                            'name':'Pranay',
+                            "age": 36,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 10000
+                            },
+                            {
+                            'name':'Sanjeeth',
+                            "age": 32,
+                            "gender": "male",
+                            "city": "bengaluru",
+                            "salary": 20000
+                            },
+                            {
+                            'name':'Jasim',
+                            "age": 21,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 25000
+                            },
+                            {
+                            'name':'Angel',
+                            "age": 20,
+                            "gender": "female",
+                            "city": "nalgonda",
+                            "salary": 30000
+                            },
+                            {
+                            'name':'Ram Naidu',
+                            "age": 22,
+                            "gender": "male",
+                            "city": "guntur",
+                            "salary": 2000000000,
+                            },
+                            {
+                            'name':'Ashish',
+                            "age": 14,
+                            "gender": "male",
+                            "city": "indore",
+                            "salary": 40000
+                            }
+                            ];
+                            var tr = document.createElement('tr')
+                            var tref=document.getElementById('a')
+                            tref.appendChild(tr)
+                            headings.forEach(function(a){
+                                var td=document.createElement('th')
+                                td.innerHTML=a;
+                                td.style.textAlign='center'
+                                td.style.width='100px'
+                                tr.appendChild(td)
+                            })
+
+                            // people.forEach(function(aa){
+                            //     var trow = document.createElement('tr')
+                                
+                            //     var td1=document.createElement('td')
+                            //     td1.innerHTML=aa.name
+                            //     td1.style.textAlign='center'
+                            //     trow.appendChild(td1)
+
+                            //     var td2=document.createElement('td')
+                            //     td2.innerHTML=aa.age
+                            //     td2.style.textAlign='center'
+                            //     trow.appendChild(td2)
+
+                            //     var td3=document.createElement('td')
+                            //     td3.innerHTML=aa.gender
+                            //     td3.style.textAlign='center'
+                            //     trow.appendChild(td3)
+
+                            //     var td4=document.createElement('td')
+                            //     td4.innerHTML=aa.city
+                            //     td4.style.textAlign='center'
+                            //     trow.appendChild(td4)
+
+                            //     var td5=document.createElement('td')
+                            //     td5.innerHTML=aa.salary
+                            //     td5.style.textAlign='center'
+                            //     trow.appendChild(td5)
+                                
+                            //     tref.appendChild(trow)
+                            // })
+
+
+
+                            // Using nested loops
+
+                            people.forEach(function(a){
+                                var tr = document.createElement('tr');
+
+                                for(var x in a){
+                                    var td=document.createElement('td')
+                                    td.innerHTML=a[x]
+                                    td.style.textAlign='center'
+                                    tr.appendChild(td)
+                                }
+                                tref.appendChild(tr)
+                            })
+
+
+
+    </script>
+</body>
+</html>

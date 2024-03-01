@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="inbtn()">IN</button>
+    <button onclick="outbtn()">OUT</button>
+    <button onclick="total()">Total</button>
+    <button onclick="ref()">Refresh</button>
+    <h1 id="h1"></h1>
+    <h1>Time Log :</h1>
+    <ul id="ul"></ul>
+
+    <script>
+        var sum = 0;
+        var a;
+        var b;
+        var ul = document.getElementById('ul')
+        function inbtn(){
+            var li = document.createElement('li')
+            a = new Date()
+            li.innerHTML=a
+            ul.appendChild(li)
+            a=a.getTime()
+        }
+        function outbtn(){
+            var li = document.createElement('li')
+            b = new Date()
+            li.innerHTML=b
+            ul.appendChild(li)
+            b=b.getTime()
+            sum+=(b-a)
+        }
+
+        function total(){
+                var h1 = document.getElementById('h1')
+                h1.innerHTML=`Total Time Worked : ${sum}ms`
+        }
+        function ref(){
+            ul.innerHTML=''
+            h1.innerHTML=''
+        }
+    </script>
+</body>
+</html>

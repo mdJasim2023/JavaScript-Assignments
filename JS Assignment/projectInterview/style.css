@@ -1,0 +1,17 @@
+.ul{
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.heading{
+    Width: 1797px;
+    Height: 77px;
+    Top: -2590px;
+    Left: -795px;
+    text-align: center;
+}

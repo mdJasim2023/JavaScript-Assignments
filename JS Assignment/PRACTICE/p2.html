@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="forM" onsubmit="event.preventDefault()" id="for"></form>
+    <div id="Div"></div>
+
+    <script>
+        var ar_1 = ['Name','Number','Email'];
+        ar_1.forEach(function(a){
+            var label = document.createElement('label')
+            label.innerHTML=a + ' ';
+            var input = document.createElement('input')
+            input.setAttribute('name',a)
+            var br = document.createElement('br')
+            var br1 = document.createElement('br')
+            var fref = document.getElementById('for')
+            fref.appendChild(label)
+            fref.appendChild(input)
+            fref.appendChild(br )
+            fref.appendChild(br1 )
+        })
+        var label_1 = document.createElement('label')
+            label_1.innerHTML='Image :'
+            var input_1= document.createElement('input')
+            input_1.setAttribute('type','file')
+            input_1.setAttribute('name','Image')
+            var fref = document.getElementById('for')
+            fref.appendChild(label_1)
+            fref.appendChild(input_1)
+            var br2 = document.createElement('br')
+            fref.appendChild(br2)
+            var br2 = document.createElement('br')
+            fref.appendChild(br2)
+            var btn = document.createElement('button')
+            btn.innerHTML='Add to cart'
+            btn.onclick=function abc(a){
+        var ar_3 = [];
+        var obj = {
+            'name' : '',
+            'number': '',
+            'email': '',
+            'image':''
+        }
+ 
+        obj.name = forM.Name.value
+        obj.number = forM.Number.value
+        obj.email = forM.Email.value;
+        obj.image = forM.Image.value;
+         }
+        ar_3.push(obj)
+        console.log(ar_3); ;
+        fref.appendChild(btn)
+    </script>
+</body>
+</html>

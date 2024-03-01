@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bdy">
+    <img id="image" width="100px"><br>
+    <button onclick="abc(event)">OFF</button>
+    <script>
+         function abc(e){
+            if(e.target.innerHTML=='OFF'){
+                e.target.innerHTML='ON'
+                var x = document.getElementById('image')
+                x.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg2wnBFSQ2zfDF9IT2sXnYeFAIE1YA9a4V6Yl0gqL2mqhD4NR559HAphpx8L0kHsZedos&usqp=CAU'
+            }
+            else{
+                e.target.innerHTML='OFF'
+                var x = document.getElementById('image')
+                x.src='https://i.postimg.cc/KjK1wL3c/bulb-off.png'
+            }
+         }
+    </script>
+</body>
+</html>

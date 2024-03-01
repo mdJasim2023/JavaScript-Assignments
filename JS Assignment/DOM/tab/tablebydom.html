@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td,th{
+            border-collapse: collapse;
+            padding: 20px;
+            border-color: blue;
+            
+            
+        }
+        td{
+            width: 150px;
+        }
+      
+
+    </style>
+</head>
+<body>
+    <table border="2px"  align="center" id="tab">
+        <tr id="a"></tr>
+        <tr id ='bb'></tr>
+        <tr id ='cc'></tr>
+        <tr id="dd"></tr>
+        <tr id="ee"></tr>
+        <tr id="ff"></tr>
+        <tr id="gg"></tr>
+    </table>
+    <script>
+        var headings = ['Name of the Student','Subject','Marks','Percentage']
+        var data1 =['Mohammad Jasim','English','92','92%']
+        var data2 =['Jasim Mohammad','Maths','80','80%']
+        var data3 = ['Angel Juliana','Biology','60','60%']
+
+        var b=document.getElementById('a')
+
+        for(var x in headings){
+            var c = document.createElement('th')
+            c.innerHTML=headings[x]
+            b.appendChild(c)
+            b.style.color='orange'
+        }
+        var one = document.getElementById('bb')
+        for(var y in data1){
+            var d = document.createElement('td')
+            d.innerHTML=data1[y]
+            one.appendChild(d)
+            one.style.textAlign='center'
+        }
+
+        var two = document.getElementById('cc')
+        for(var z in data2){
+            var e = document.createElement('td')
+            e.innerHTML=data2[z]
+            two.appendChild(e)
+            two.style.textAlign='center'
+        }
+        var three = document.getElementById('dd')
+        for(var zz in data3){
+            var f = document.createElement('td')
+            f.innerHTML=data3[zz]
+            three.appendChild(f)
+            three.style.textAlign='center'
+        }
+
+        // var four = document.getElementById('ee')
+        // for(var zzz in data1){
+        //     var g = document.createElement('td')
+        //     g.innerHTML=data1[zzz]
+        //     four.appendChild(g)
+        //     four.style.textAlign='center'
+        // }
+
+    
+
+        
+
+    </script>
+</body>
+</html>

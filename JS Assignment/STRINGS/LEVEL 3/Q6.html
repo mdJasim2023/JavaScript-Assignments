@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = "Code your Carreer";
+        var min = x.length;
+
+        for(var i = 0; i<=x.length-1;i++){
+            var k = x.split(x[i]).length-1;
+            if(k<min){
+                min = k;
+                var a = i;
+            }
+        }
+        console.log(`In Given String Lowest frequency of ${x} is ${x[a]} and the occurence of ${x[a]} is ${min}`);
+    </script>
+</body>
+</html>

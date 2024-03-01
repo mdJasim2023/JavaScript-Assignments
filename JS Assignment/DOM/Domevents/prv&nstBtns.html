@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bdy">
+    <img src="" id="images" onmouseover="change()">
+    <script>
+        var ar = ['https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80',
+    'https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dnature%2Bwallpaper%2Bhd&psig=AOvVaw0czl3ztqIH2KVQvJsn1zzq&ust=1702533890815000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCPimtJDfi4MDFQAAAAAdAAAAABAI',
+'https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.jpg?s=612x612&w=0&k=20&c=i4HYO7xhao7CkGy7Zc_8XSNX_iqG0vAwNsrH1ERmw2Q=',
+'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fphotos%2Fnature&psig=AOvVaw0czl3ztqIH2KVQvJsn1zzq&ust=1702533890815000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCPimtJDfi4MDFQAAAAAdAAAAABAU',
+'https://www.google.com/url?sa=i&url=https%3A%2F%2Fpicjumbo.com%2Ffree-stock-photos%2Fnature%2F&psig=AOvVaw0czl3ztqIH2KVQvJsn1zzq&ust=1702533890815000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCPimtJDfi4MDFQAAAAAdAAAAABAa',
+'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fbeauty-in-nature&psig=AOvVaw0czl3ztqIH2KVQvJsn1zzq&ust=1702533890815000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCPimtJDfi4MDFQAAAAAdAAAAABAg']
+var i = 0;
+       var iref = document.getElementById('images')
+
+      
+       iref.src=ar[i]
+       function change(){
+        if(i===ar.length){
+            var i = 0;
+        }
+       }
+        
+    </script>
+</body>
+</html>

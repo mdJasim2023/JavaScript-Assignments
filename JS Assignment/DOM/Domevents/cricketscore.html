@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid darkblue;
+            width: 250px;
+            height: 150px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        button{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            border: none;
+            margin: 5px;
+            color: white;
+        }
+        button:hover{
+            box-shadow: 2px 2px 5px blueviolet;
+            cursor: pointer;
+        }
+        .d3{
+            background-color: red;
+        }
+        .d1{
+            background-color: burlywood;
+        }
+        .d2{
+            background-color: blueviolet;
+        }
+        .main1{
+            display: flex;
+            justify-content: space-around;
+        }
+        h1{
+            text-align: center;
+            color: rgb(81, 28, 131);
+            text-transform: uppercase;
+        }
+        .champ{
+            border: 1px solid rebeccapurple;
+            border-radius: 10px;
+            background-color: cadetblue;
+            padding: 10px;
+            width: 200px;
+            font-size: 25px;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <section class="main1">
+    <section>
+        <h1>Team A</h1>
+    <div id="color">
+    <h1 id="h"><span id="s2">0</span><span id="s3"></span><span id="s1">0</span></h1>
+    <h1 id="h2"></h1>
+    <span id="s4"></span>
+    <span id="s5"></span>
+    </div>
+    <br><br>
+    <button onclick="score(0)" class="d1">Zero</button>
+    <button onclick="score(1)"class="d1" >One</button>
+    <button onclick="score(2)" class="d1">Two</button>
+    <button onclick="score(3)" class="d1">Three</button><br><br>
+    <button onclick="score(4)" class="d2">Four</button>
+    <button onclick="score(5)" class="d1">Five</button>
+    <button onclick="score(6)" class="d2">Six</button>
+    <button onclick="out(1)" class="d3">Wicket</button>
+    <br><br>
+    </section>
+
+    <section>
+        <h1>Team B</h1>
+        <div id="colorA">
+        <h1 id="h1"><span id="s22">0</span><span id="s33"></span><span id="s11">0</span></h1>
+        <h1 id="h22"></h1>
+        <span id="s44"></span>
+        <span id="s55"></span>
+        </div>
+        <br><br>
+        <button onclick="scoreA(0)" class="d1">Zero</button>
+        <button onclick="scoreA(1)"class="d1" >One</button>
+        <button onclick="scoreA(2)" class="d1">Two</button>
+        <button onclick="scoreA(3)" class="d1">Three</button><br><br>
+        <button onclick="scoreA(4)" class="d2">Four</button>
+        <button onclick="scoreA(5)" class="d1">Five</button>
+        <button onclick="scoreA(6)" class="d2">Six</button>
+        <button onclick="outA(1)" class="d3">Wicket</button>
+        <br><br>
+        </section>
+    </section>
+    <!-- <div id="em"></div> -->
+    <h1 id="final"></h1>
+
+
+    <script>
+        var s1 = document.getElementById('s1')
+        s1.style.color='red'
+        var s2 = document.getElementById('s2')
+        var s3 = document.getElementById('s3')
+        var s4 = document.getElementById('s4')
+        var div = document.getElementById('color')
+        s3.innerHTML = '/'
+        var h = document.getElementById('h1')
+        var h2 = document.getElementById('h2')
+        var dis = document.querySelectorAll('button')
+        var sum = 0;
+        var sum1=0;
+        function score(a){
+            sum=sum+a;
+            s2.innerHTML=sum
+        }
+        
+
+        function out(b){
+            sum1=sum1+b
+            s1.innerHTML=sum1
+            if(sum1===10){
+                s1.style.display='none'
+                h2.innerHTML=' Team A batting Over'
+                h2.style.color='green'
+                s3.style.display='none'
+                s2.style.display='none'
+                div.style.height='120px'
+                s4.innerHTML=`Team B target is : ${sum+1}`
+                s4.style.color='red'
+                div.style.backgroundColor='skyblue'
+                div.style.backgroundColor='lightgrey'
+                div.style.border='2px solid orange'
+                div.style.padding='10px'
+            }
+        }
+        
+        //Team B
+
+        var spn5 = document.getElementById('s55')
+        function commentry(xx){
+            if(xx>=1 && xx<=5){
+                spn5.innerHTML=`It's a ${xx} Runs`
+            }
+            else{
+                spn5.innerHTML=`Wow it's a ${xx} Runs`
+            }
+        }
+        var s11 = document.getElementById('s11')
+        s11.style.color='red'
+        var s22 = document.getElementById('s22')
+        var s33 = document.getElementById('s33')
+        var s44 = document.getElementById('s44')
+        var divA = document.getElementById('colorA')
+        s33.innerHTML = '/'
+        var h1 = document.getElementById('h1')
+        var h22 = document.getElementById('h22')
+        var disA = document.querySelectorAll('button')
+        var win = document.getElementById('final')
+        var sumA = 0;
+        var sum1A=0;
+        function scoreA(x){
+            sumA=sumA+x;
+            s22.innerHTML=sumA
+            if(sumA>sum){
+                win.innerHTML=`Team B Won By ${10-sum1} Wickets`
+            }
+            commentry(x)
+        }
+       
+
+        function outA(y){
+            sum1A=sum1A+y
+            s11.innerHTML=sum1A;
+            if(sum1A===10){
+                s11.style.display='none'
+                h22.innerHTML='Team A batting Over'
+                h22.style.color='green'
+                s33.style.display='none'
+                // disA.forEach((z)=>{
+                //     z.disabled=true
+                // })
+                s44.innerHTML=`Team B target is : ${sumA+1}`
+                s44.style.color='red'
+                  // })
+                  s22.style.display='none'
+                divA.style.height='120px'
+                divA.style.backgroundColor='lightgrey'
+                divA.style.border='2px solid orange'
+                divA.style.padding='10px'
+                win.innerHTML=`Team A won by ${(sum-sumA)} runs`
+                spn5.style.display='none'
+            }}
+    </script>
+</body>
+</html>

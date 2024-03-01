@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let x = +prompt();
+        // if(84 % x ==0){
+        //     console.log("YES")
+        // }
+        // else{
+        //     console.log("NO")
+        // }
+
+        // let a = (x)=>{return x}
+        // console.log(typeof a);
+
+        // var y = 42;
+        // y%84===0?console.log('yes'):console.log('no')
+
+        var x = 985;
+        x%10===4?console.log('true'):console.log('false');
+        
+
+            var a = +prompt();
+            var b = +prompt();
+            var c = +prompt();
+      
+        // a>b?console.log(`${a} is greater`):console.log(`${b} is greater`)
+
+        if(a>b && a>c){
+            if(b>c){
+                console.log(a,b,c);
+            }
+            else{
+                console.log(a,c,b);
+            }
+        }
+        else if(b>a && b>c){
+            if(a>c){
+                console.log(b,a,c);
+            }
+            else{
+                console.log(b,c,a);
+            }
+        }
+        else{
+            if(c>a && c>b){
+                console.log(c,a,b);
+            }
+            else{   
+                console.log(c,b,a);
+            }
+        }
+    </script>
+</body>
+</html>

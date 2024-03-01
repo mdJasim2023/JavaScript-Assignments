@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(20*10);
+        function div(a,b){
+            if(b===0){
+                return Promise.reject('This is invalid')
+            }
+            else{
+                return Promise.resolve(a/b)
+            }
+        }
+        div(10,0)
+        .then(function(res){console.log(res);})
+        console.log('Hello');
+
+
+        function abc(a){
+            var x = 0;
+           var y= setInterval(function(){
+                x++;    
+                console.log('jasiM');
+                if(x===10){
+                    clearInterval(y)
+                }
+            },1000)
+        }
+        abc()
+    </script>
+</body>
+</html>

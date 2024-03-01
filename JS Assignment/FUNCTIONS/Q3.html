@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //  Write a function which can print the given arguments in ascending order.
+                            
+                            function sortNums(a,b,c){
+                                    if(a>b && a>c){
+                                        if(b>c){
+                                            return a+','+b+','+c;
+                                        }
+                                        else{
+                                            return a+','+c+','+b;
+                                        }
+                                    }
+                                    else if(b>a && b>c){
+                                        if(a>c){
+                                            return b+','+a+','+c;
+                                        }
+                                    }
+                                    else{
+                                        if(a>b){
+                                            return c+','+a+','+b;
+                                        }
+                                        else{
+                                            return c+','+b+','+a;
+                                        }
+                                    }
+                            }
+                        
+                            console.log(sortNums(4,7,68));
+    </script>
+</body>
+</html>

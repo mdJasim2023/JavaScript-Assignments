@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 onclick="x(event)">HTML</h1>
+    <p>Hyper Text Markup Language</p>
+    <h1 onclick="x(event)">CSS</h1>
+    <p>Cascading Style Sheet</p>
+
+    <script>
+        function x(e){
+            if(e.target.nextElementSibling.style.display==='block'){
+                e.target.nextElementSibling.style.display='none' 
+            }
+            else{
+                document.querySelectorAll('p').forEach(function(a){
+                    a.style.display='none'
+                })
+                e.target.nextElementSibling.style.display='block'
+
+               
+            }
+        }
+    </script>
+</body>
+</html>

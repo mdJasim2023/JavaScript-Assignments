@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="date" onchange="dateOfBirth()" id="dob">
+    <h1 id="h1"></h1>
+
+    <script>
+        var today = new Date().getTime()
+        var iref = document.getElementById('dob')
+        var h1 = document.getElementById('h1')
+
+        function dateOfBirth(){
+            var dob = new Date(iref.value)
+            var bts = dob.getTime()
+            var age = (today - bts)/(1000*60*60*24*365)
+            h1.innerHTML=age
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ar = [10,20,30,40,55,77,52,97,36,Infinity]
+        var x = ar.forEach(function(a){
+            console.log(a);
+        })
+
+        var ar_1 = [10,20,30,40,55,77,52,97,36,555]
+        var y = ar_1.forEach(a=>console.log(a))      //Arrow Function
+
+
+        //Using Arrow function 
+
+        var z =ar.sort((a,b)=>{
+            return a-b;
+        })
+        console.log(z);
+
+    </script>
+</body>
+</html>

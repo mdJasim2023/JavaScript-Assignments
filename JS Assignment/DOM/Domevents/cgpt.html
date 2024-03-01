@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    /* Add some basic styling for better visibility */
+    #cart {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 250px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Shopping Cart</h1>
+
+  <!-- Form to capture input values -->
+  <form id="productForm">
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" required>
+
+    <label for="productPrice">Product Price:</label>
+    <input type="number" id="productPrice" required>
+
+    <button type="button" onclick="addToCart()">Add to Cart</button>
+  </form>
+
+  <!-- Display the cart -->
+  <div id="cart"></div>
+
+  <script>
+    // Array to store products
+    var cartItems = [];
+
+    // Function to add product to the cart
+    function addToCart() {
+      // Get input values
+      var productName = document.getElementById('productName').value;
+      var productPrice = document.getElementById('productPrice').value;
+
+      // Create product object
+      var product = {
+        name: productName,
+        price: productPrice
+      };
+
+      // Push product into the array
+      cartItems.push(product);
+
+      // Display the cart
+      displayCart();
+    }
+
+    // Function to display the cart
+    function displayCart() {
+      // Get the cart element
+      var cartElement = document.getElementById('cart');
+
+      // Clear the cart
+      cartElement.innerHTML = '';
+
+      // Loop through cart items and create HTML elements
+      cartItems.forEach(function(item) {
+        var productDiv = document.createElement('div');
+        productDiv.textContent = `Product: ${item.name}, Price: $${item.price}`;
+        cartElement.appendChild(productDiv);
+      });
+    }
+  </script>
+</body>
+</html>

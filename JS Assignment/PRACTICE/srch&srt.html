@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form" id="frm" onsubmit="event.preventDefault()"></form>
+    <div id="container"></div>
+
+    <script>
+        var arr = [];
+
+        var fref = document.getElementById('frm')
+        var inp_1 = document.createElement('input')
+        var inp_2 = document.createElement('input')
+        var inp_3 = document.createElement('input')
+
+        fref.appendChild(inp_1)
+        fref.appendChild(inp_2)
+        fref.appendChild(inp_3)
+
+        var btn = document.createElement('button')
+        btn.innerHTML='Submit'
+        fref.appendChild(btn)
+        btn.onclick=function(){
+            var obj = {
+            name:inp_1.value,
+            number:inp_2.value,
+            email:inp_3.value,
+        }
+        arr.push(obj)
+        inp_1.value='';
+        inp_2.value='';
+        inp_3.value='';
+        // console.log(arr);
+        createCart(arr)
+        }
+
+        var dref = document.getElementById('container')
+
+        function createCart(){
+            dref.innerHTML='';
+            arr.forEach(function(a){
+                var div = document.createElement('div') 
+                div.style.backgroundColor='gold'
+                div.style.width='200px'
+                div.style.he='100px'
+                div.style.border='1px solid'
+                dref.appendChild(div)
+
+                var h1 = document.createElement('div')
+                var h2 = document.createElement('div')
+                var h3 = document.createElement('div')
+
+                h1.innerHTML = a.name;
+                h2.innerHTML = a.number;
+                h3.innerHTML = a.email;
+
+                dref.appendChild(h1)
+                dref.appendChild(h2)
+                dref.appendChild(h3)
+            })
+        }
+
+
+    </script>
+</body>
+</html>

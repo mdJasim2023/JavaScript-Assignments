@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <h1>Add Contact Cards With Operation,sorting and filtring</h1>
+          <form onsubmit="event.preventDefault()" name="cart">
+            <label>Name:</label>
+            <input type="text" name="name"><br><br>
+            <label>Number:</label>
+            <input type="text" name="number"><br><br>
+            <label>Email:</label>
+            <input type="email" name="email" ><br><br>
+            <label>Image:</label>
+            <input type="file" name="image"><br><br>
+            <button onclick="fun()">Add Cart</button>
+          </form>
+          <div id="d1"></div>
+
+          <script>
+            var detail=[];
+            function fun(){
+            var obj={
+                name:'',
+                number:'',
+                email:'',
+                image:''
+              
+            }
+            obj.name=cart.name.value,
+            obj.number=cart.number.value,
+            obj.email=cart.email.value,
+            obj.image=cart.image.value
+            detail.push(obj)
+            console.log(detail)
+            cartdata();
+        }
+        function cartdata(){
+            detail.forEach(function(card){
+                var tdiv=document.getElementById('d1')
+                tdiv.style.border='2px solid red';
+                tdiv.style.width='200px';
+                tdiv.style.height='200px';
+                tdiv.style.backgroundColor='yellow'
+                var para=document.createElement('p')
+                var img=document.createElement('image')
+                img.style.width="150px";
+                img.style.width="100px";
+                img.src=card.image;
+                para.appendChild(img)
+
+                var head=document.createElement('h4')
+                head.innerHTML="Name:"+ card.name;
+                para.appendChild(head)
+    
+
+                var head1=document.createElement('h4')
+                head1.innerHTML="Number:"+card.number;
+                para.appendChild(head1)
+
+                var head2=document.createElement('h4')
+                head2.innerHTML="Email:"+card.email;
+                para.appendChild(head2)
+                tdiv.appendChild(para)
+
+            })
+
+        }
+          </script>
+</body>
+</html>

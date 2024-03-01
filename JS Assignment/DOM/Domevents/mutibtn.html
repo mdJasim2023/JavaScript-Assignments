@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 250px;
+            height: 200px;
+            border: 1px solid gainsboro;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="colors"></div>
+        <br>
+        <button onclick="abc('red')">Red</button>
+        <button onclick="abc('green')">Green</button>
+        <button onclick="abc('blue')">Blue</button>
+        <button onclick="abc('pink')">Pink</button>
+        <button onclick="abc('white')">Reset</button>
+    </center>
+    <script>
+        function abc(c){
+            var ref = document.getElementById('colors')
+            ref.style.backgroundColor=c
+        }
+       
+        
+    </script>
+</body>
+</html>

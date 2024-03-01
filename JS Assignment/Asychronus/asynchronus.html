@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="d1" border="2">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td>City</td>
+                <td>Salary</td>
+            </tr>
+        </thead>
+        <tbody id="d1"></tbody>
+    </table>
+    <br><br><br>
+    <button onclick="sortasc()">A-Z</button><br><br><br>
+    <button onclick="sortdsc()">Z-A</button>
+    <script>
+        var headings = ['name','age','gender','city','salary'];
+        var people = [
+                            {
+                            'name':'Pranay',
+                            "age": 36,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 10000
+                            },
+                            {
+                            'name':'Sanjeeth',
+                            "age": 32,
+                            "gender": "male",
+                            "city": "bengaluru",
+                            "salary": 20000
+                            },
+                            {
+                            'name':'Jasim',
+                            "age": 21,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 25000
+                            },
+                            {
+                            'name':'Angel',
+                            "age": 20,
+                            "gender": "female",
+                            "city": "nalgonda",
+                            "salary": 30000
+                            },
+                            {
+                            'name':'Ram Naidu',
+                            "age": 22,
+                            "gender": "male",
+                            "city": "guntur",
+                            "salary": 2000
+                            },
+                            {
+                            'name':'Ashish',
+                            "age": 14,
+                            "gender": "male",
+                            "city": "indore",
+                            "salary": 40000
+                            }
+                            ];
+
+        function sortasc(){
+            people.sort(function(lh,hl){
+                var fn1 = lh.name.toLowerCase()
+                var fn2 = hl.name.toLowerCase()
+
+                if(lh<hl){
+                    return -1;
+                }
+                if(hl>lh){
+                    return 1;
+                }
+                else{
+                    return 0;
+                }
+            })
+            createAscorder(people)
+        }
+        function sortdsc(){
+            people.sort(function(lh,hl){
+                var fn1 = lh.name.toLowerCase()
+                var fn2 = hl.name.toLowerCase()
+
+                if(lh<hl){
+                    return  1;
+                }
+                if(hl>lh){
+                    return -1;
+                }
+                else{
+                    return 0;
+                }
+            })
+            createAscorder(people)
+        }
+
+        var tref = document.getElementById('d1');
+        // var tr = document.createElement('tr');
+        // tref.appendChild('tref');
+
+        // headings.forEach(function(a){
+        //     var th = document.createElement('th')
+        //     th.innerHTML=a;
+        //     tr.appendChild(th)
+        // })
+        function createAscorder(order){
+        tref.innerHTML=''
+        order.forEach(function(b){
+            var trow = document.createElement('tr')
+            
+            for(var x in b){
+                var td1 = document.createElement('td')
+                td1.innerHTML=b[x];
+                trow.appendChild(td1)
+                tref.appendChild(trow)
+            }
+        })}
+    </script>
+</body>
+</html>

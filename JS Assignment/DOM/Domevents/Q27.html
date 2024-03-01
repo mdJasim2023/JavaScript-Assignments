@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .str span{
+            font-size: 100px;
+            color: lightgray;
+            cursor: pointer;
+        }
+        .h1{
+            color: lightgray;
+        }
+        #hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="str">
+        <span onclick="abc(event)">&#x2605;</span>
+        <span onclick="abc(event)">&#x2605;</span>
+        <span onclick="abc(event)">&#x2605;</span>
+        <span onclick="abc(event)">&#x2605;</span>
+        <span onclick="abc(event)">&#x2605;</span>
+    </div>
+    <h1 class="h1">Rating <span id="txt">0</span><span>/5</span></h1>
+    <h1 id="hide">Thank you &#10084;</h1>
+    <script>
+            var c=0;
+    function abc(e){
+        e.target.style.color='gold'
+        c++;
+        if(c===1){
+        var sref = document.getElementById('txt')
+        sref.innerHTML='1'  
+        sref.style.color='gold'
+    }
+    if(e.target.style.color==='gold'){
+        e.target.style.color='lightgray'
+    }
+    else{
+        e.target.style.color='golf'
+    }
+    if(c===2){
+        var sref = document.getElementById('txt')
+        sref.innerHTML='2'  
+        sref.style.color='gold'
+    }
+    if(c===3){
+        var sref = document.getElementById('txt')
+        sref.innerHTML='3'  
+        sref.style.color='gold'
+    }
+    if(c===4){
+        var sref = document.getElementById('txt')
+        sref.innerHTML='4'  
+        sref.style.color='gold'
+    }
+    if(c===5){
+        var sref = document.getElementById('txt')
+        var hide = document.getElementById('hide')
+        sref.innerHTML='5'  
+        sref.style.color='gold'
+        hide.style.display='block'
+        hide.style.color='red'
+    }
+    }
+    </script>
+</body>
+</html>

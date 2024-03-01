@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1"></h1>
+   <h1> <span id="hour"></span>:
+    <span id="min"></span>:
+    <span id="sec"></span></h1>
+    <button id="btnIn" onclick="chechIn()">Check In</button>
+    <button id="btnOut" onclick="chechOut()">Check Out</button>
+    <p id="para"></p>
+    <h1 id="time"></h1>
+    <script>
+        var hour = document.getElementById('hour');
+        var min = document.getElementById('min');
+        var sec = document.getElementById('sec');
+       var h1 = document.getElementById('h1');
+        var time = document.getElementById('time')
+        var para = document.getElementById('para')
+        var btnIn = document.getElementById('btnIn');
+        var btnOut = document.getElementById('btnOut');
+
+        var date = new Date();
+
+        var i = date.getHours();
+        var j = date.getMinutes();
+        var k = date.getSeconds();
+
+        hour.innerHTML = i;
+        min.innerHTML = j;
+        sec.innerHTML = k;
+        h1.innerHTML = `${date.getDate()} / ${date.getMonth()+1} / ${date.getFullYear()}`;
+        para.innerHTML = 'Total Time ::'
+       
+        setInterval(()=>{
+            k++
+            sec.innerHTML = k;
+            if(k === 59){
+                k=0;
+                sec.innerHTML = k;
+                min.innerHTML = ++j;
+
+            }
+            if(j === 59){
+                j = 0;
+                min.innerHTML = j;
+                hour.innerHTML = ++i;
+
+            }
+
+            if(i === 23){
+                i = 0;
+                hour.innerHTML = i;
+            }
+
+        },1000)
+
+        var sum = 0;
+        var a;
+        var b;
+        function chechIn(){
+            a = new Date().getSeconds();
+            btnIn.disabled = true
+            btnOut.disabled = false
+        }
+        function chechOut(){
+            b = new Date().getSeconds();
+            sum += b-a;
+            time.innerHTML = `${sum} seconds`;
+            btnIn.disabled = false
+            btnOut.disabled = true
+           
+        }
+        
+    </script>
+</body>
+</html>

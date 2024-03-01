@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="h">
+    <table id="hh" border="2" cellpadding="10" cellspacing="10" style="border-collapse: collapse;"></table>
+    <div id="div"></div>
+    <script>
+        //Q1. Create one h1 element and put some text into it
+
+        var bo = document.getElementById('h')
+        var head = document.createElement('h1')
+        head.innerHTML='Hello DOM World!'
+        bo.appendChild(head)
+//Q2.. Create one h1 element,put some text into it and apply red font color to it
+
+
+        var bo = document.getElementById('h')
+        var head = document.createElement('h1')
+        head.innerHTML='Angel Julaina &#10084;'
+        head.style.color='red'
+        bo.appendChild(head)
+
+//Q3.Take an array of names and create a list from it.
+
+        var ar=['Angel','Jasim','Murari','Ram Naidu','Sanjeeth'];
+
+        var bref = document.getElementById('h');
+        var unorder = document.createElement('ul')
+        bref.appendChild(unorder)
+
+        ar.forEach(function(a){
+            var list = document.createElement('li')
+            list.innerHTML=a
+            unorder.appendChild(list)
+        })
+
+//Q4.Take an array of numbers and create a list from it.
+
+var ar=[11,22,33,44,55];
+
+var bref = document.getElementById('h');
+var unorder = document.createElement('ul')
+bref.appendChild(unorder)
+
+ar.forEach(function(a){
+    var list = document.createElement('li')
+    list.innerHTML=a
+    unorder.appendChild(list)
+})
+
+
+//Q5.. Take an array of objects and create a table form it.
+
+var headings = ['Name','Age','Gender','City','salary'];
+
+var people = [
+                            {
+                            'name':'Pranay',
+                            "age": 36,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 10000
+                            },
+                            {
+                            'name':'Sanjeeth',
+                            "age": 32,
+                            "gender": "male",
+                            "city": "bengaluru",
+                            "salary": 20000
+                            },
+                            {
+                            'name':'Jasim',
+                            "age": 21,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 25000
+                            },
+                            {
+                            'name':'Angel',
+                            "age": 20,
+                            "gender": "female",
+                            "city": "nalgonda",
+                            "salary": 30000
+                            },
+                            {
+                            'name':'Ram Naidu',
+                            "age": 22,
+                            "gender": "male",
+                            "city": "guntur",
+                            "salary": 2000
+                            },
+                            {
+                            'name':'Ashish',
+                            "age": 14,
+                            "gender": "male",
+                            "city": "indore",
+                            "salary": 40000
+                            }
+                            ];
+
+    var tab = document.getElementById('hh')
+    var tr = document.createElement('tr')
+    tab.appendChild(tr)
+    headings.forEach(function(a){
+            var th = document.createElement('th')
+            th.innerHTML=a
+            th.style.width='100px'
+            tr.appendChild(th)
+    })
+
+    people.forEach(function(b){
+        var trow = document.createElement('tr')
+        tab.appendChild(trow)
+        for(var x in b){
+            var td1=document.createElement('td')
+            td1.innerHTML=b[x]
+            td1.style.textAlign='center'
+            trow.appendChild(td1)
+        }
+    })
+
+    //Q6.Take an array of image urls and display the images in browser
+
+    var urls = ['https://w0.peakpx.com/wallpaper/549/3/HD-wallpaper-boy-and-girl-best-friend-forever-boy-and-girl-best-friend-thumbnail.jpg',
+    'https://w0.peakpx.com/wallpaper/617/983/HD-wallpaper-3-best-friends-with-sunset-bg-3-best-friends-3-best-friends-thumbnail.jpg',
+    'https://w0.peakpx.com/wallpaper/549/3/HD-wallpaper-boy-and-girl-best-friend-forever-boy-and-girl-best-friend-thumbnail.jpg',
+    'https://w0.peakpx.com/wallpaper/617/983/HD-wallpaper-3-best-friends-with-sunset-bg-3-best-friends-3-best-friends-thumbnail.jpg',
+    ]
+
+var dref = document.getElementById('div')
+
+urls.forEach(function(aaaa){
+    var img = document.createElement('img')
+    img.src=aaaa;
+    img.style.width='25%'
+    dref.appendChild(img)
+})
+    
+    </script>
+</body>
+</html>

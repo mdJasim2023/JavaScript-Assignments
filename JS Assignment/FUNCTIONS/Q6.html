@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Write a function which can check a given number is prime number or not
+        var b = +prompt('Enter a Number :')
+       function isaPrimeNumber(a){
+            var c = 0;
+            for(var i=0;i<=a;i++){
+                if(a%i===0){
+                    c++;
+                }
+            }
+            if(c===2){
+                console.log(`${a} is a Prime Number`);
+            }
+            else{
+                console.log(`${a} is not a Prime Number`);
+            }
+       }
+       var prime = isaPrimeNumber(b);
+       
+        
+    </script>
+</body>
+</html>

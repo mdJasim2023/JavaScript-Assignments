@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ar = [10,55,66,35,95,96,25,52,72,32,42,19,16,74];
+
+        //Filter the Even Numbers in Array
+        var y = ar.filter(a=>a%2==0)
+        console.log(y);
+
+        var y = ar.map(a=>a%2==0?console.log('Even',a):console.log('Odd',a))
+
+
+        //Sort the Array of Numbers
+        var y = ar.sort((a,b)=>a-b)
+        console.log(y);
+
+        var y = ar.sort((a,b)=>b-a)
+        console.log(y);
+
+        </script>
+</body>
+</html>

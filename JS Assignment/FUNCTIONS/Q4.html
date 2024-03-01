@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Write a function which can return the factorial of a number.
+        var k =1;     
+        function fact(a){
+              for(var i=a;i>=1;i--){
+                k *= i;
+              }
+              return k;
+        }
+        var factorial = fact(4);
+        console.log(factorial);
+    </script>
+</body>
+</html>

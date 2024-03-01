@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" size="6px" style="text-align: center;" id="cnt1" onkeyup="up()"> &nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="a1()">+</button>
+    <input type="text" size="1px" id="count1">
+    <button onclick="a2()">-</button>
+    <br>
+    <br>
+    <h1>Total: <h2 id="h2"></h2></h1>
+    <script>
+        var x = document.getElementById('cnt1')
+        var y = document.getElementById('count1')
+        var z = document.getElementById('h2')
+        function up(){
+            z.innerHTML=x.value*y.value
+        }
+        var c = 1;
+        y.value=c
+        y.style.textAlign='center'
+        function a1(){
+            y.value=++c
+            z.innerHTML=x.value*y.value
+        }
+        function a2(){
+            y.value=--c;
+            z.innerHTML=x.value*y.value
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!-- <html>
+    <head>
+        <title>Events</title>
+    </head>
+    <body align="center">
+        <h1 style="color:red;">Add Students</h1>
+        <input type="text" id="i">
+        <button onclick="abc()" style="background-color: orange;">Add Student</button>
+        <div id="d" style="color: red;"></div>
+        <script>
+            var ar=[];
+            var inpt=document.getElementById("i");
+            var div=document.getElementById("d")
+            function abc(){
+                var ul=document.createElement("li");
+                ul.innerHTML="";
+                div.appendChild(ul);
+                ar.push(inpt.value);
+                ul.innerHTML=inpt.value
+            }
+        </script>
+    </body>
+</html>
+
+<html>
+    <head>
+        <title>Events</title>
+    </head>
+    <body align="center">
+        <h1 style="color: red;">Show images using URL</h1>
+        <label style="color: red;">Enter image URL :</label>
+        <input type="text" id="i"><br><br>
+        <button onclick="abc()" style="background-color: orange;">Add Image</button>
+        <div id="d"></div>
+        <script>
+            var ar=[];
+            var inpt=document.getElementById("i");
+            var div=document.getElementById("d");
+            function abc(){
+                var img=document.createElement("img");
+                img.style.height="300px";
+                img.style.width="200px";
+                div.appendChild(img)
+                ar.push(inpt.value)
+                img.src=inpt.value;
+            }
+        </script>
+    </body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Bar Example</title>
+  <style>
+    /* Add some basic styling for better visibility */
+    #progress-container {
+      width: 50%;
+      margin: 50px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Progress Bar Example</h1>
+
+  <!-- Progress bar container -->
+  <div id="progress-container">
+    <!-- Progress bar element -->
+    <progress id="progress-bar" value="0" max="100"></progress>
+  </div>
+
+  <!-- Button to update progress -->
+  <button onclick="updateProgress()">Update Progress</button>
+
+  <script>
+    // Function to update the progress bar
+    function updateProgress() {
+      // Get the progress bar element
+      var progressBar = document.getElementById('progress-bar');
+
+      // Update the progress value (0 to 100)
+      var newValue = progressBar.value + 10;
+      progressBar.value = newValue > 100 ? 0 : newValue;
+    }
+  </script>
+
+</body>
+</html>
+

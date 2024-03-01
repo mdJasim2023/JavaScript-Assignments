@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //    function add(a){
+    //     console.log("Angel");
+    //      setTimeout(function(){
+    //         var sum=0;
+    //         for(var i=0;i<=a;i++){
+    //                 sum+=i;
+    //         }
+    //         console.log(sum);
+    //      },1000)
+    //    }
+    //    add(50,function(res){console.log(res);});
+    //    console.log("Juliana");
+    //    var c = 0;
+    //    function xyz(a){
+    //     var x = setInterval(function(){
+    //             c++;
+    //             console.log(c);
+    //             if(c===11){
+    //             clearInterval(x)
+    //             }
+    //         },2000)
+
+    //    }
+    //    xyz()
+
+    function count(a){
+        var sum = 0;
+        for(var i=0;i<a;i++){
+            sum = sum+i;
+        }
+        return Promise.resolve(sum)
+    }
+    count(12244544)
+    // .then(function(res){console.log(res);})
+    // console.log('Angel'); 
+
+    function div(a,b){
+        var z;
+        if(b===0){
+            return Promise.reject("Invalid denominator");
+        }
+         else{                                  //synchornous to Asynchoronous
+            z = a/b;
+            return Promise.resolve(z)
+        }
+    }
+    div(10,0).then(function(res){console.log(res);})
+    console.log('Hello');
+    </script>
+</body>
+</html>

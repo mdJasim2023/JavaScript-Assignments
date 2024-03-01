@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <body>
+            <label id="1" onclick="abc(1)">&#9734;</label>
+            <label id="2" onclick="abc(2)">&#9734;</label>
+            <label id="3" onclick="abc(3)">&#9734;</label>
+            <label id="4" onclick="abc(4)">&#9734;</label>
+            <label id="5" onclick="abc(5)">&#9734;</label>
+            <h1>Rating:</h1>
+            <span id="dd"></span>
+            <script>
+                function abc(e){
+                    for(var i=1;i<=5;i++){
+                        if(i<=e){
+
+                        
+                            document.getElementById(i).innerHTML= "&#9733";
+                        } 
+                        else {
+                            document.getElementById(i).innerHTML= "&#9734";
+                        }
+                        
+                       }
+                            document.getElementById("dd").innerHTML= e+ "/5"
+                }
+                             
+
+
+
+
+
+            </script>
+        </body>
+    </head>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      </style>
+</head>
+<body>
+    <form id="frm" onsubmit="event.preventDefault()" name="form"></form>
+    <br><br>
+    <div id="mainDiv"></div>
+    <script>
+        var ara = [];
+        var fref = document.getElementById('frm')
+        var lab_1 = document.createElement('label')
+        lab_1.innerHTML='Name :'
+        var inp_1 = document.createElement('input')
+        inp_1.setAttribute('type','text')
+
+        var lab_2 = document.createElement('label')
+        lab_2.innerHTML='Number :'
+        var inp_2 = document.createElement('input')
+        inp_2.setAttribute('type','number')
+
+        var lab_3 = document.createElement('label')
+        lab_3.innerHTML='E-mail :'
+        var inp_3 = document.createElement('input')
+        inp_3.setAttribute('type','email')
+
+        fref.appendChild(lab_1)
+        fref.appendChild(inp_1)
+        fref.appendChild(lab_2)
+        fref.appendChild(inp_2)
+        fref.appendChild(lab_3)
+        fref.appendChild(inp_3)
+        
+        var btn = document.createElement('button')
+        btn.innerHTML='submit'
+        fref.appendChild(btn)
+
+    
+
+        btn.onclick=function(){
+            var obj ={
+                'name':'',
+                'number':'',
+                'email':'',
+            } 
+            
+            obj.name = inp_1.value
+            obj.number=inp_2.value
+            obj.email=inp_3.value
+            form.reset()
+            ara.push(obj)
+            createcart(ara)
+            console.log(obj);
+            var updbtn = document.createElement('button')
+            updbtn.innerHTML='Update'
+            fref
+        }
+        console.log(ara);
+        // fref.appendChild(btn)
+
+        function update(){
+            
+        }
+          
+        var srtBtn = document.createElement('button')
+        srtBtn.innerHTML='Sort A-Z'
+        fref.appendChild(srtBtn)
+        srtBtn.onclick=function(){
+            ara.sort(function(a,b){
+                if(a.name>b.name){
+                    return 1
+                }
+                else if(b.name>a.name){
+                    return -1
+                }
+                else{
+                    return 0
+                }
+            })
+            createcart(ara)
+        }
+
+        var srtBtn2 = document.createElement('button')
+        srtBtn2.innerHTML='Sort Z-A'
+        fref.appendChild(srtBtn2)
+        srtBtn2.onclick=function(){
+            ara.sort(function(a,b){
+                if(b.name>a.name){
+                    return 1
+                }
+                else if(a.name>b.name){
+                    return -1
+                }
+                else{
+                    return 0
+                }
+            })
+            createcart(ara)
+        }
+         
+        var labelSrch = document.createElement('label')
+        labelSrch.innerHTML='search'
+        var srch = document.createElement('input')
+        srch.setAttribute('type','text')
+        srch.onkeyup=function(){
+      var re =  ara.filter(function(a){
+                return a.name.startsWith(srch.value)
+            })
+            createcart(re)
+        }
+        fref.appendChild(labelSrch)
+        fref.appendChild(srch) 
+
+
+
+
+        var dref = document.getElementById('mainDiv')
+
+        function createcart(ar){
+            dref.innerHTML='';
+            ar.forEach(function(f){
+                var div1=document.createElement("div")
+                    div1.style.height="170px"
+                    div1.style.width="230px"
+                    div1.style.border="2px solid transparent"
+                    div1.style.backgroundColor="pink"
+                    dref.appendChild(div1)
+
+                var h1 = document.createElement('div')
+                var h2 = document.createElement('div')
+                var h3 = document.createElement('div')
+                var edt = document.createElement('button')
+                edt.innerHTML='edit'
+                edt.style.backgroundColor='yellow';
+                edt.style.color='red'
+                edt.onclick=function(){
+                    inp_1.value=f.name
+                    inp_2.value=f.number
+                    inp_3.value=f.email
+                }
+                h1.style.margin='20px'
+                h2.style.margin='20px'
+                h3.style.margin='20px'   
+                edt.style.marginLeft='170px'
+                // var br = document.createElement('br')
+
+                h1.innerHTML='Name :'+ f.name
+                h2.innerHTML='Number :'+ f.number
+                h3.innerHTML='E-mail :'+ f.email
+
+               
+                div1.appendChild(h1)
+                div1.appendChild(h2)
+                div1.appendChild(h3)
+                div1.appendChild(edt)
+                var br1 = document.createElement('br')
+                dref.appendChild(br1)
+            })
+        }
+
+        
+
+
+    </script>
+</body>
+</html>

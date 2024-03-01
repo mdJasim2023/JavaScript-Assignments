@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 20%;
+            height: 100px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="d6"></div>
+    <br><br>
+    <button onclick="toggle(event)">toggle</button>
+
+    <script>
+        function toggle(e){
+            var l = document.getElementById('d6')
+            
+            if(l.style.backgroundColor==='white'){
+                l.style.backgroundColor='yellow'  
+            }
+            else{
+                l.style.backgroundColor='white'
+            }
+        }
+    </script>
+</body>
+</html>

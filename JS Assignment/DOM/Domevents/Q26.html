@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://cdn.pixabay.com/photo/2019/05/30/10/17/people-4239520_960_720.jpg" alt="" onmouseover="hover()" width="20%">
+    <img src="https://cdn.pixabay.com/photo/2014/07/11/23/37/kids-390959_1280.jpg" alt="" onmouseover="hover1()" width="20%">
+    <img src="https://previews.123rf.com/images/nengredeye/nengredeye1810/nengredeye181000015/110677646-friendship-of-boys-during-school-holidays.jpg" alt="" onmouseover="hover2()" width="20%" >
+    <br>
+    <img src="" alt="" id="cimg">
+    <script>
+        function hover(){
+            var x = document.getElementById('cimg')
+            x.setAttribute('src',"https://cdn.pixabay.com/photo/2019/05/30/10/17/people-4239520_960_720.jpg")
+            x.style.width='20%'
+        }
+        function hover1(){
+            var x = document.getElementById('cimg')
+            x.setAttribute('src',"https://cdn.pixabay.com/photo/2014/07/11/23/37/kids-390959_1280.jpg")
+            x.style.width='20%'
+        }
+        function hover2(){
+            var x = document.getElementById('cimg')
+            x.setAttribute('src',"https://previews.123rf.com/images/nengredeye/nengredeye1810/nengredeye181000015/110677646-friendship-of-boys-during-school-holidays.jpg")
+            x.style.width='20%'
+        }
+    </script>
+</body>
+</html>

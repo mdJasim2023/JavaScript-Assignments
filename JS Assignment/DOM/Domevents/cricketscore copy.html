@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid darkblue;
+            width: 250px;
+            height: 170px;
+            margin: 0px auto;
+            text-align: center;
+        }
+        button{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            border: none;
+            margin: 5px;
+            color: white;
+        }
+        button:hover{
+            box-shadow: 2px 2px 5px blueviolet;
+            cursor: pointer;
+        }
+        .d3{
+            background-color: red;
+        }
+        .d1{
+            background-color: burlywood;
+        }
+        .d2{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id="color">
+    <h1 id="h"><span id="s2">0</span><span id="s3"></span><span id="s1">0</span></h1>
+    <h1 id="h2"></h1>
+    <span id="s4"></span>
+    </div>
+    <br><br>
+    <center>
+    <button onclick="score(0)" class="d1">Zero</button>
+    <button onclick="score(1)"class="d1" >One</button>
+    <button onclick="score(2)" class="d1">Two</button>
+    <button onclick="score(3)" class="d1">Three</button><br><br>
+    <button onclick="score(4)" class="d2">Four</button>
+    <button onclick="score(5)" class="d1">Five</button>
+    <button onclick="score(6)" class="d2">Six</button>
+    <button onclick="out(1)" class="d3">Wicket</button>
+    <br><br>
+    </center>
+    
+
+    <script>
+        var s1 = document.getElementById('s1')
+        var s2 = document.getElementById('s2')
+        var s3 = document.getElementById('s3')
+        var s4 = document.getElementById('s4')
+        var div = document.getElementById('color')
+        s3.innerHTML = '/'
+        var h = document.getElementById('h')
+        var h2 = document.getElementById('h2')
+        var dis = document.querySelectorAll('button')
+        var sum = 0;
+        var sum1=0;
+        function score(a){
+            sum=sum+a;
+            s2.innerHTML=sum
+        }
+
+        function out(b){
+            sum1=sum1+b
+            s1.innerHTML=sum1
+            if(sum1===10){
+                s1.style.display='none'
+                h2.innerHTML=' 1st Innings Over'
+                h2.style.color='green'
+                s3.style.display='none'
+                dis.forEach((a)=>{
+                    a.disabled=true
+                })
+                s4.innerHTML=`Target is : ${sum+1}`
+                s4.style.color='red'
+                div.style.backgroundColor='skyblue'
+                div.style.border='none'
+            }
+        }
+        
+
+       
+
+    </script>
+</body>
+</html>

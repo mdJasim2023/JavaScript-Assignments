@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Delete all occurrences of a character from a string
+
+        //my method
+        var x = 'jasim mohammad';
+        var y = prompt();
+        var z ='';
+        for(var i = 0;i<=x.length-1;i++){
+                if(x[i] !==y){
+                    z = z +x[i];
+                    
+                }
+        }
+        console.log(z);
+//2nd method
+        var a = 'jasim mohammad';
+        var c = prompt();
+        var b = a.replaceAll(c,'')
+        console.log(b);
+    </script>
+</body>
+</html>

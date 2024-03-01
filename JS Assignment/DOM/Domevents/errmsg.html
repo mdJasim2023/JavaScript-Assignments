@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="frm"  onsubmit="event.preventDefault()"></form>
+    <script>
+        var fref = document.getElementById('frm')
+        var lab_1 = document.createElement('label')
+        lab_1.innerHTML-'FirstName :'
+        var fn = document.createElement('input')
+        fn.setAttribute('minlength','4')
+        var lab_2 = document.createElement('label')
+        lab_2.innerHTML='LastName :'
+        var ln = document.createElement('input')
+        var lab_3 = document.createElement('label')
+        lab_3.innerHTML='MiddleName :'
+        var mn = document.createElement('input')
+        var updt = document.createElement('button')
+        updt.innerHTML='Update'
+        
+        fref.appendChild(lab_1)
+        fref.appendChild(fn)
+        fref.appendChild(lab_2)
+        fref.appendChild(ln)
+        fref.appendChild(lab_3)
+        fref.appendChild(mn)
+        fref.appendChild(updt)
+
+        
+    </script>
+</body>
+</html>

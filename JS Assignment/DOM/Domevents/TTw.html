@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="inTym('new Date()')">IN</button>
+    <button onclick="outTym()">OUT</button>
+    <button onclick="total()">Total</button>
+    <button onclick="ref()">Refresh</button>
+    <span id="ttw"></span><br>
+    <h2>Time Log :</h2>
+    <ul id="ul"></ul>
+    <script>
+        var sum=0;
+        var a;
+        var b;
+        function inTym(){
+            var uref = document.getElementById('ul')
+            a = new Date()
+            var li = document.createElement('li')
+            li.innerHTML=a
+            uref.appendChild(li)
+            a=a.getTime()
+        }
+        function outTym(){
+            var uref = document.getElementById('ul')
+            b= new Date()
+            var li = document.createElement('li')
+            li.innerHTML=b
+            uref.appendChild(li)
+            b=b.getTime()
+            sum+=(b-a)
+            console.log(sum);
+        }
+
+        
+        function total(){
+        var spn = document.getElementById('ttw')
+        spn.innerHTML=`Total Time Worked: ${sum}`
+        }
+
+        function ref(){
+            var uref = document.getElementById('ul').innerHTML=''
+            var spn = document.getElementById('ttw').innerHTML=''
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q. For the given array of object, solve the following
+var people = [
+                            {
+                            "firstname": "praveen",
+                            "lastname": "gubbala",
+                            "age": 36,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 10000
+                            },
+                            {
+                            "firstname": "srikanth",
+                            "lastname": "gubbala",
+                            "age": 32,
+                            "gender": "male",
+                            "city": "bengaluru",
+                            "salary": 20000
+                            },
+                            {
+                            "firstname": "pradeep",
+                            "lastname": "reddy",
+                            "age": 21,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 25000
+                            },
+                            {
+                            "firstname": "mounika",
+                            "lastname": "mudiraj",
+                            "age": 20,
+                            "gender": "female",
+                            "city": "nalgonda",
+                            "salary": 30000
+                            },
+                            {
+                            "firstname": "nikhil",
+                            "lastname": "m",
+                            "age": 22,
+                            "gender": "male",
+                            "city": "guntur",
+                            "salary": 2000
+                            },
+                            {
+                            "firstname": "riya",
+                            "lastname": "bhadouria",
+                            "age": 14,
+                            "gender": "female",
+                            "city": "indore",
+                            "salary": 40000
+                            }
+                            ];
+
+
+                            // //Q1.Print all the firstnames.
+
+                            // var x = people.map(function(a){
+                            //     console.log(a.firstname);
+                            //     return a.firstname;
+                            // })
+                            // console.log(x);
+
+                            // //Q2.Print all the full names.
+
+                            // var x = people.map(function(a){
+                            //     console.log(a.firstname+a.lastname);
+                            //     return a.firstname+a.lastname;
+                            // })
+                            // console.log(x);
+
+                            // //Q3.Print only those names whose age is more than 25.
+
+                            // var x = people.filter(function(a){
+                            //     if(a.age>25){
+                            //         console.log(a.firstname);
+                            //     }
+                            // })
+                            // console.log(x);
+
+                            // //Q4.Print all female names.
+
+                            // var x = people.filter(function(a){
+                            //     if(a.gender==='female'){
+                            //         console.log(a.firstname);
+                            //     }
+                            // })
+
+                            // //Q5.Print only those names whose salary is more than 25000 and increase their salaries by 15%.
+
+
+                            // var x = people.filter(function(a){
+                            //     if(a.salary>25000){
+                            //         console.log(a.salary+a.salary*15/100);
+                            //     }
+                            // })
+
+                            // //Q6.Using prompt, print only those names whose city is "hyd".
+                            // // var z = prompt("Enter the city:")
+                            // // var x = people.filter(function(a){
+                            // //     if(a.city===z){
+                            // //         console.log(a.firstname);
+                            // //     }
+                            // // })
+
+                            // //Q7.Print the total salary of all the people.
+                            // var sum = 0;
+                            // var x = people.map(function(a){
+                            //     sum +=a.salary;
+                                
+                                
+                            // })
+                            // console.log(sum);
+
+                            var ar =[10,21,33,67];
+                            var x = ar.some(function(a){
+                                return a%2===0;
+                            })
+                            console.log(x);
+
+
+
+
+//find() is an array iteratio menthod then that returns index of the  first element of the array and returns the first value.
+    </script>
+</body>
+</html>

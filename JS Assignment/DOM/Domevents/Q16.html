@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 30%;
+            height: 100px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <br>
+    <!-- <button onclick="abc()">Red</button>
+    <button onclick="xyz()">Green</button>
+    <button onclick="bca()">Blue</button>
+    <button onclick="cab()">pink</button>
+
+    <script>
+        function abc(){
+            var x = document.getElementById('d1');
+            x.style.backgroundColor='red'
+        }
+        function xyz(){
+            var y = document.getElementById('d1');
+            y.style.backgroundColor='green'
+        }
+        function bca(){
+            var z = document.getElementById('d1');
+            z.style.backgroundColor='blue'
+        }
+        function cab(){
+            var xx = document.getElementById('d1');
+            xx.style.backgroundColor='pink'
+        } -->
+
+        <button onclick="abc('red')">Red</button>
+        <button onclick="abc('green')">Green</button>
+        <button onclick="abc('blue')">Blue</button>
+        <button onclick="abc('pink')">pink</button>
+    
+        <script>
+            function abc(y){
+                var x = document.getElementById('d1');
+                x.style.backgroundColor=y
+            }
+            // function xyz(){
+            //     var y = document.getElementById('d1');
+            //     y.style.backgroundColor='green'
+            // }
+            // function bca(){
+            //     var z = document.getElementById('d1');
+            //     z.style.backgroundColor='blue'
+            // }
+            // function cab(){
+            //     var xx = document.getElementById('d1');
+            //     xx.style.backgroundColor='pink'
+            // }
+    </script>
+</body>
+</html>

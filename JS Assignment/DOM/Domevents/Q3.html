@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <ul id="push">
+           <li>Apple</li>
+           <li>Mango</li>
+           <li>Orange</li>
+         </ul>
+    <script>
+// Store the texts of each li element in an array.
+
+var x = document.querySelectorAll('li')
+
+var y =[];
+
+x.forEach(function(a){
+    y.push(a.textContent)
+})
+console.log(y);
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" size="6px" style="text-align: center;" id="cnt1"> &nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="a1()">+</button>
+    <input type="text" size="1px" id="count1">
+    <button onclick="a2()">-</button>
+    <br><br>
+    <input type="text" size="6px" style="text-align: center;" id="cnt2"> &nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="b1()">+</button>
+    <input type="text" size="1px" id="count2">
+    <button onclick="b2()">-</button>
+    <br><br>
+    <input type="text" size="6px" style="text-align: center;" id="cnt3"> &nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="c1()">+</button>
+    <input type="text" size="1px" id="count3">
+    <button onclick="c2()">-</button>
+    <script>
+        var products = [
+            {
+                'Price':4000,
+                'count':1
+            },
+            {
+                'Price':2000,
+                'count':1
+            },
+            {
+                'Price':3000,
+                'count':1
+            }
+        ];
+         var m = 4000;
+        var aa = document.getElementById('cnt1')
+        aa.value=m
+        var mm = 2000;
+        var bb = document.getElementById('cnt2')
+        bb.value=mm
+        var mmm = 3000;
+        var cc = document.getElementById('cnt3')
+        cc.value=mmm
+       var n = 1;
+        var xx = document.getElementById('count1')
+        xx.value=n;
+        xx.style.textAlign='center'
+        var yy = document.getElementById('count2')
+        yy.value=n;
+        yy.style.textAlign='center'
+        var zz = document.getElementById('count3')
+        zz.value=n;
+        zz.style.textAlign='center'
+        function a1(){
+            xx.value=++n
+        }
+        function a2(){
+            xx.value=--n
+        }
+        function b1(){
+            yy.value=++n
+        }
+        function b2(){
+            yy.value=--n
+        }
+        function c1(){
+            zz.value=++n
+        }
+        function c2(){
+            zz.value=--n
+        }
+
+        
+    </script>
+</body>
+</html>

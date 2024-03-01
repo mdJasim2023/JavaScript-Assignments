@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <form name="userForm" onsubmit="event.preventDefault()">
+    <label>FirstName :</label>
+    <input type="text" name="firstname"><br><br>
+    <label>LastName :</label>
+    <input type="text" name="lastname"><br><br>
+    <label>Gender :</label><br><br>
+    <input type="radio" name="gender" value="male">Male 
+    <input type="radio" name="gender" value="female">Female 
+    <input type="radio" name="gender" value="other">Other <br><br>
+    <label>Languages :</label> <br><br>
+    <input type="checkbox" name="languages" value="english">English 
+    <input type="checkbox" name="languages" value="telugu">Telugu 
+    <input type="checkbox" name="languages" value="hindi">Hindi 
+    <input type="checkbox" name="languages" value="urdu">Urdu <br><br>
+    <button onclick="abc()">Save</button>
+    </form>
+    <table id="tab" border="2"></table>
+
+    <script>
+        var people=[];
+        function abc(){
+        var obj = {
+            'firstName':'',
+            'lastName':'',
+            'Gender':'',
+            'Languages':[]
+        }
+        obj.firstName=userForm.firstname.value
+        obj.lastName=userForm.lastname.value
+        obj.Gender=userForm.gender.value
+        userForm.languages.forEach(function(lang){
+            if(lang.checked===true){
+                obj.Languages.push(lang.value)
+            }
+        })
+        people.push(obj)
+        console.log(people);
+
+        var ar = ['FirstName','LastName','Gender','Languages']
+        var table = document.getElementById('tab')
+        table.innerHTML='';
+        var tr = document.createElement('tr')
+        table.appendChild(tr)
+        ar.forEach(function(a){
+            th = document.createElement('th')
+            th.innerHTML=a
+            th.style.width='100px'
+            tr.appendChild(th)
+        })
+    
+        people.forEach(function(b){
+            var tr1 = document.createElement('tr')
+            for(var x in b){
+                var td = document.createElement('td')
+                td.innerHTML=b[x]
+                td.style.textAlign='center'
+                tr1.appendChild(td)
+                tab.appendChild(tr1)
+            }
+        })
+        } 
+    </script>
+</body>
+</html>

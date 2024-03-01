@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 onclick="xtz(event)">Jasim</h1>
+    <p>"Have enough courage to trust love one more time and always one more time." "Love does not consist in gazing at each other,</p>
+    <h1 onclick="xtz(event)">Angel</h1>
+    <p>"Have enough courage to trust love one more time and always one more time." "Love does not consist in gazing at each other,</p>
+    <h1 onclick="xtz(event)">Luke</h1>
+    <p>"Have enough courage to trust love one more time and always one more time." "Love does not consist in gazing at each other,</p>
+    <h1 onclick="xtz(event)">Samdu</h1>
+    <p>"Have enough courage to trust love one more time and always one more time." "Love does not consist in gazing at each other,</p>
+
+    <script>
+
+        function xtz(e){
+          
+            if(e.target.nextElementSibling.style.display==='block'){
+                e.target.nextElementSibling.style.display='none'
+            
+            }
+            else{
+                document.querySelectorAll('p').forEach(function(el){
+                el.style.display='none'
+            })
+                e.target.nextElementSibling.style.display='block'
+                
+
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Add contact with Crud opperations,Sorting & filtering</h1>
+    <div id="form"></div>
+    <button style="display: none" id="sort">A-Z</button>
+    <input type="text" style="display: none" id="search" />
+    <div id="list"></div>
+    <!-- <label for="fullName">Fullname:</label><input type="ema" id="fullName" /> -->
+    <script>
+      var div = document.getElementById("form");
+      var fnDiv = document.createElement("div");
+      var fnLabel = document.createElement("label");
+      var fullName = document.createElement("input");
+      var pnDiv = document.createElement("div");
+      var phoneLabel = document.createElement("label");
+      var phoneNumber = document.createElement("input");
+      var emailDiv = document.createElement("div");
+      var emailLabel = document.createElement("label");
+      var eMail = document.createElement("input");
+      var imgDiv = document.createElement("div");
+      var imgLabel = document.createElement("label");
+      var imgButton = document.createElement("button");
+      var submitButton = document.createElement("button");
+      fnLabel.innerHTML = "Fullname:";
+      fnLabel.htmlFor = "fullName";
+      fullName.type = "text";
+      fullName.id = "fullName";
+      phoneLabel.innerHTML = "Number:";
+      phoneLabel.htmlFor = "number";
+      phoneNumber.type = "text";
+      phoneNumber.id = "number";
+      emailLabel.innerHTML = "E-mail:";
+      emailLabel.htmlFor = "Email";
+      eMail.type = "email";
+      eMail.id = "Email";
+      imgLabel.innerHTML = "Image:";
+      imgButton.innerHTML = "Add image";
+      submitButton.innerHTML = "Add contact";
+      submitButton.style.margin = "5px";
+      submitButton.style.color = "white";
+      submitButton.style.backgroundColor = "blue";
+      fnDiv.style.marginBottom = "10px";
+      pnDiv.style.marginBottom = "10px";
+      emailDiv.style.marginBottom = "10px";
+      imgDiv.style.marginBottom = "10px";
+      fnDiv.appendChild(fnLabel);
+      fnDiv.appendChild(fullName);
+      pnDiv.appendChild(phoneLabel);
+      pnDiv.appendChild(phoneNumber);
+      emailDiv.appendChild(emailLabel);
+      emailDiv.appendChild(eMail);
+      imgDiv.appendChild(imgLabel);
+      imgDiv.appendChild(imgButton);
+      div.appendChild(fnDiv);
+      div.appendChild(pnDiv);
+      div.appendChild(emailDiv);
+      div.appendChild(imgDiv);
+      div.appendChild(submitButton);
+      var cC = [];
+
+      submitButton.onclick = function () {
+        document.getElementById("sort").style.display = "inline";
+        document.getElementById("search").style.display = "inline";
+
+        var contacts = {};
+        contacts.name = fullName.value;
+        fullName.value = "";
+        contacts.number = phoneNumber.value;
+        phoneNumber.value = "";
+        contacts.email = eMail.value;
+        eMail.value = "";
+        cC.push(contacts);
+        createUI(cC);
+      };
+      function createUI(contactCard) {
+        var listDiv = document.getElementById("list");
+        listDiv.innerHTML = "";
+        contactCard.forEach(function (contact, index) {
+          var contactDiv = document.createElement("div");
+          contactDiv.style.border = "1px solid black";
+          contactDiv.style.backgroundColor = "aqua";
+          contactDiv.style.margin = "10";
+          contactDiv.style.display = "inline-flex";
+          contactDiv.style.flexDirection = "column";
+          var delButton = document.createElement("button");
+          var pName = document.createElement("p");
+          var pNumber = document.createElement("p");
+          var pEmail = document.createElement("p");
+          pName.innerHTML = `Name:${contact.name}`;
+          pNumber.innerHTML = `Number:${contact.number}`;
+          pEmail.innerHTML = `Email:${contact.email}`;
+          delButton.innerHTML = "X";
+          delButton.id = "Xbutton";
+          contactDiv.appendChild(delButton);
+          contactDiv.appendChild(pName);
+          contactDiv.appendChild(pNumber);
+          contactDiv.appendChild(pEmail);
+          listDiv.appendChild(contactDiv);
+        });
+        document.getElementById("search").onkeyup = () => {
+          var k = [];
+          k = contactCard.filter(function (a, b) {
+            for (var k in a) {
+              if (a[k].includes(document.getElementById("search").value)) {
+                return true;
+              }
+            }
+          });
+          createUI(k);
+        };
+
+        document.getElementById("sort").onclick = function () {
+          contactCard.sort(function (a, b) {
+            if (a.name > b.name) {
+              return 1;
+            }
+            if (b.name > a.name) {
+              return -1;
+            }
+            return 0;
+          });
+          createUI();
+        };
+      }
+    </script>
+  </body>
+</html>

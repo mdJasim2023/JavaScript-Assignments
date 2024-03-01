@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Write a function which can check a given number is palindrome or not
+
+        function myfunction(a){
+            var palin = 0;
+            for(var i =a.length-1;i>=0;i--){
+                for(var j=0;j<=a.length-1;j++){
+                    if(a[i]===a[j]){
+                        palin =2;
+                    }
+                    else{
+                        palin = 1;
+                    }
+                }
+            }
+            if(palin===2){
+                console.log(`${a} is a palindrone`);
+            }
+            else{
+                console.log(`${a} is not a palindrone`);
+            }
+        }
+        myfunction('mm');
+    </script>
+</body>
+</html>

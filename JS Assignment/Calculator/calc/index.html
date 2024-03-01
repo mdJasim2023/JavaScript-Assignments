@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+    <style>
+
+        div .child{
+            border: 1px solid transparent;
+            width: 175px;
+            padding: 20px;
+            background-color:rgb(225, 222, 222);
+            border-radius: 10px;
+            margin-left: 38px;
+            box-shadow: -5px -5px 20px #ffff;
+            margin: 60px;
+            margin-top: 35px;
+            
+        }
+        .main{
+            border: 1px solid transparent ;
+            width: 350px;
+            height: 450px;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            background-color:rgb(225, 222, 222);
+            margin:25px auto;
+        }
+        button{
+            color: white;
+            width: 30px;
+            padding: 3px;
+            margin-left:8px ;
+            border-radius: 8px;
+            height: 30px;
+            border: 1px solid transparent;
+            background-color: rgb(190, 189, 189);
+            /* box-shadow: 1px 1px 10px lightgre;  */
+            box-shadow: -5px -5px 20px #ffff;
+        }
+        input{
+            width: 145px;
+            margin-left: 8px;
+            border: 1px solid  transparent;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 1px 1px 2px rgb(125, 120, 120) ;
+        }
+        
+        button:active{
+            background-color: orange;
+            border: none;
+        }
+        button:hover{
+            box-shadow: 1px 1px 2px black;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        h1{
+            text-align: center;
+            color:rgb(114, 119, 124) ;
+            margin: 10px;
+        }
+        .c{
+            background-color: rgb(247, 8, 20);
+            border: none;
+        }
+        .oper{
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="child">
+        <h1>Calculator</h1>
+    <input type="text" id="cal">
+    <br><br>
+    <button onclick="clearValue('')" class="c">C</button>
+    <button onclick="calculator('%')">%</button>
+    <button onclick="calculator('.')">.</button>
+    <button onclick="calculator('/')" class="oper">/</button>
+    <br><br>
+    <button onclick="calculator('7')">7</button>
+    <button onclick="calculator('8')">8</button>
+    <button onclick="calculator('9')">9</button>
+    <button onclick="calculator('*')" class="oper">x</button>
+    <br><br>
+    <button onclick="calculator('4')">4</button>
+    <button onclick="calculator('5')">5</button>
+    <button onclick="calculator('6')">6</button>
+    <button onclick="calculator('-')" class="oper">-</button>
+    <br><br>
+    <button onclick="calculator('1')">1</button>
+    <button onclick="calculator('2')">2</button>
+    <button onclick="calculator('3')">3</button>
+    <button onclick="calculator('+')" class="oper">+</button>
+    <br><br>
+    <button onclick="calculator('00')">00</button>
+    <button onclick="calculator('**')">^</button>
+    <button onclick="calculator('0')">0</button>
+    <button onclick="equalTo('=')" class="oper">=</button>
+
+    </div>
+   </div>
+
+    <script>
+        function calculator(a){
+            var iref = document.getElementById('cal').value +=a
+        }
+        function clearValue(){
+            var iref = document.getElementById('cal').value = '';
+        }
+        function equalTo(a){
+            var iref = document.getElementById('cal')
+
+            try{
+                iref.value=eval(iref.value)
+            }
+            catch(err){
+                iref.value=err;
+                console.log(err);
+            }
+            // iref.value=eval(iref.value)
+        }
+    </script>
+</body>
+</html>

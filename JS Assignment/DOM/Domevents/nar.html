@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body align="center">
+
+    <form name="cardsForm" onsubmit="event.preventDefault()">
+        <h1>Add Conctact Cards with CRUD Operations</h1>
+        Name : <input type="text" name="name"><br><br>
+        Number : <input type="text" name="num" id=""><br><br>
+        Email : <input type="email" name="mail"><br><br>
+        Image URL : <input type="text" name="img"><br><br>
+        <button onclick="addConctact()">Add Conctact</button>
+    </form>
+    <div id="maindiv"></div>
+    <script>
+        var maindiv = document.getElementById('maindiv')
+        var arr = [];
+        function addConctact() {
+            var obj = {};
+            obj.Image = cardsForm.img.value;
+            obj.Name = cardsForm.name.value;
+            obj.Number = cardsForm.num.value;
+            obj.Email = cardsForm.mail.value;
+            
+            arr.push(obj)
+            //console.log(arr);
+            maindiv.innerHTML = '';
+            arr.forEach(function(a){
+               
+                var div = document.createElement('div');
+                maindiv.appendChild(div)
+                var img = document.createElement('img');
+                    img.src = a['Image'];
+                    img.style.width = '100px'
+                    div.appendChild(img)
+                    
+                Object.keys(a).forEach(function(b){
+                    delete a.Image;
+                    var div1 = document.createElement('div');
+                    div1.innerHTML = `${b} : ${a[b]}`
+                    div.appendChild(div1)
+
+                   
+                    
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>

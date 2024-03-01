@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Write a function which can check a given number is armstrong number or not
+
+        var c=0;
+        function arm(a){
+            
+           var z=0;
+           for(var i=a;i>0;i=parseInt(i/10)){
+            c++;
+           }
+           for(var i=a;i>0;i=parseInt(i/10)){
+             z +=((i%10)**c);    
+             
+           }
+           if(z===a){
+            return a,'is a Armstrong'
+           }
+           else{
+            return a,'is not a Armstrong'
+           }
+           return z;
+        }
+        var m=arm(370)
+        console.log(m);
+    </script>
+</body>
+</html>
